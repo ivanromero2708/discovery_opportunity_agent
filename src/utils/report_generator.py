@@ -1,4 +1,6 @@
 # src/utils/report_generator.py
+
+import os
 from docx import Document
 from docx.shared import Pt
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
@@ -8,17 +10,20 @@ def convert_markdown_to_word(report: str, industry: str, region: str) -> str:
     Convierte un reporte en formato Markdown a un documento Word con formato profesional.
     
     Args:
-        report (str): Contenido del reporte en Markdown
-        industry (str): Industria objetivo
-        region (str): Región objetivo
+        report (str): Contenido del reporte en Markdown.
+        industry (str): Industria objetivo.
+        region (str): Región objetivo.
     
     Returns:
-        str: Ruta del archivo generado
+        str: Ruta del archivo generado.
     """
     try:
+        # Nos aseguramos de que exista la carpeta "reports"
+        os.makedirs("reports", exist_ok=True)
+        
         doc = Document()
         
-        # Configuración de estilos
+        # Ajuste de estilos: ejemplo de estilo 'Heading 1'
         styles = doc.styles
         heading_style = styles['Heading 1']
         heading_font = heading_style.font
@@ -30,31 +35,27 @@ def convert_markdown_to_word(report: str, industry: str, region: str) -> str:
         doc.core_properties.title = f"Market Research Report - {industry} - {region}"
         doc.core_properties.author = "AI Research Assistant"
 
-        # Procesar contenido
+        # Procesar contenido (dividir por líneas, buscar #, ##, etc.)
         lines = report.split('\n')
-        current_section = None
         
         for line in lines:
             line = line.strip()
             if not line:
                 continue
 
-            # Manejo de encabezados
             if line.startswith('# '):
-                current_section = doc.add_heading(line[2:], level=1)
+                doc.add_heading(line[2:], level=1)
             elif line.startswith('## '):
-                current_section = doc.add_heading(line[3:], level=2)
+                doc.add_heading(line[3:], level=2)
             elif line.startswith('### '):
-                current_section = doc.add_heading(line[4:], level=3)
+                doc.add_heading(line[4:], level=3)
             else:
-                # Texto normal con formato
-                para = doc.add_paragraph()
-                para.add_run(line).font.size = Pt(11)
-                
-                # Alineación justificada para texto normal
-                para.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
+                # Texto normal
+                para = doc.add_paragraph(line)
+                para_format = para.paragraph_format
+                para_format.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
 
-        # Generar nombre de archivo seguro
+        # Generar nombre de archivo
         filename = f"reports/Market_Research_{industry.replace(' ', '_')}_{region.replace(' ', '_')}.docx"
         doc.save(filename)
         

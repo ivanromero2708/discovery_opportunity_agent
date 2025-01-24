@@ -2,6 +2,17 @@ from langgraph.graph import START, END, StateGraph
 from langgraph.checkpoint.memory import MemorySaver
 from .state import ResearchGraphState
 from .edges.initiate_all_interviews import IniateAllInterviews
+import logging
+
+logger = logging.getLogger(__name__)
+
+class YourGraphClass:
+    def __init__(self):
+        self.builder = StateGraph(...)
+        
+    def compile(self):
+        logger.info("Compiling graph...")  # <-- Añadir logs
+        return self.builder.compile()
 
 from .nodes import (
     CreateAnalysts,

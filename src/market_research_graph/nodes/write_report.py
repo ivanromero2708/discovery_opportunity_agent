@@ -1,7 +1,7 @@
 from ..state import ResearchGraphState
 
 class WriteReport:
-    def write_report(state: ResearchGraphState):
+    def write_report(self, state: ResearchGraphState):
         # Full set of sections
         sections = state["sections"]
 
