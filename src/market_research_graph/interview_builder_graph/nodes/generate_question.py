@@ -2,10 +2,15 @@ from ..state import InterviewState
 from ..prompts import question_instructions
 from langchain_core.messages import SystemMessage
 from langchain_openai import ChatOpenAI
+import os
 
 class GenerateQuestion:
     def __init__(self) -> None:
-        self.model = ChatOpenAI(model="gpt-4o-mini", temperature=0) 
+        self.model = ChatOpenAI(
+            model="gpt-4o-mini",
+            temperature=0,
+            api_key=os.getenv("OPENAI_API_KEY")  # <-- Aquí
+        )
 
     def generate_question(self, state: InterviewState):
         """ Node to generate a question """

@@ -2,10 +2,16 @@ from ..state import ResearchGraphState
 from langchain_openai import ChatOpenAI
 from ..prompts import intro_conclusion_instructions
 from langchain_core.messages import HumanMessage
+import os
+from utils.config import OPENAI_API_KEY, OPENAI_MODEL, OPENAI_TEMPERATURE, LANGCHAIN_TRACING_V2
 
 class WriteIntroduction:
     def __init__(self) -> None:
-        self.model = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+        self.model = ChatOpenAI(
+            model=OPENAI_MODEL,
+            temperature=OPENAI_TEMPERATURE,
+            api_key=OPENAI_API_KEY
+        )
         
     def write_introduction(self, state: ResearchGraphState):
         # Full set of sections

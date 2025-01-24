@@ -2,11 +2,20 @@ from ..state import InterviewState, SearchQuery
 from ..prompts import search_instructions
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_openai import ChatOpenAI
+import os
+from utils.config import TAVILY_API_KEY, TAVILY_MAX_RESULTS, LANGCHAIN_TRACING_V2
 
 class SearchWeb:
     def __init__(self) -> None:
-        self.tavily_search = TavilySearchResults(max_results=3)
-        self.model = ChatOpenAI(model="gpt-4o-mini", temperature=0) 
+        self.tavily_search = TavilySearchResults(
+            max_results=TAVILY_MAX_RESULTS,
+            api_key=TAVILY_API_KEY
+        )
+        self.model = ChatOpenAI(
+            model=OPENAI_MODEL,
+            temperature=OPENAI_TEMPERATURE,
+            api_key=OPENAI_API_KEY
+        )
         
     def search_web(self, state: InterviewState):
     
