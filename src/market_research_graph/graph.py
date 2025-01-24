@@ -1,18 +1,18 @@
 from langgraph.graph import START, END, StateGraph
 from langgraph.checkpoint.memory import MemorySaver
 from .state import ResearchGraphState
-from .edges import initiate_all_interviews
+from .edges.initiate_all_interviews import IniateAllInterviews
 
-from interview_builder_graph.nodes import (
+from .nodes import (
     CreateAnalysts,
-    WriteReport,
-    WriteIntroduction,
-    WriteConclusion,
     FinalizeReport,
     HumanFeedback,
+    WriteConclusion,
+    WriteIntroduction,
+    WriteReport
 )
 
-from interview_builder_graph.graph import (
+from .interview_builder_graph.graph import (
     interview_builder,
 )
 
@@ -22,6 +22,7 @@ write_report = WriteReport()
 write_introduction = WriteIntroduction()
 write_conclusion = WriteConclusion()
 finalize_report = FinalizeReport()
+initiate_all_interviews = IniateAllInterviews()
 
 # Add nodes and edges 
 builder = StateGraph(ResearchGraphState)
@@ -36,7 +37,7 @@ builder.add_node("finalize_report",finalize_report.run)
 # Logic
 builder.add_edge(START, "create_analysts")
 builder.add_edge("create_analysts", "human_feedback")
-builder.add_conditional_edges("human_feedback", initiate_all_interviews, ["create_analysts", "conduct_interview"])
+builder.add_conditional_edges("human_feedback", initiate_all_interviews.run, ["create_analysts", "conduct_interview"])
 builder.add_edge("conduct_interview", "write_report")
 builder.add_edge("conduct_interview", "write_introduction")
 builder.add_edge("conduct_interview", "write_conclusion")

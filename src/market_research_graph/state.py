@@ -32,7 +32,7 @@ class GenerateAnalystsState(TypedDict):
     region: str # Target region for the company
     product_services: str # Products or services to narrow the research process
     mision_vision: str # Company mission and vision
-    strategigc_goals: str # company strategic goals
+    strategic_goals: str # company strategic goals
     human_analyst_feedback: str # Human feedback
     analysts: List[Analyst] # Analyst asking questions
 
@@ -42,7 +42,7 @@ class ResearchGraphState(TypedDict):
     region: str # Target region for the company
     product_services: str # Products or services to narrow the research process
     mision_vision: str # Company mission and vision
-    strategigc_goals: str # company strategic goals
+    strategic_goals: str # company strategic goals
     human_analyst_feedback: str # Human feedback
     analysts: List[Analyst] # Analyst asking questions
     sections: Annotated[list, operator.add] # Send() API key

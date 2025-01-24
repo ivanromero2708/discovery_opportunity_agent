@@ -3,7 +3,7 @@ from ..prompts import search_instructions
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_openai import ChatOpenAI
 import os
-from utils.config import TAVILY_API_KEY, TAVILY_MAX_RESULTS, LANGCHAIN_TRACING_V2
+from utils.config import TAVILY_API_KEY, TAVILY_MAX_RESULTS, LANGCHAIN_TRACING_V2, OPENAI_API_KEY, OPENAI_MODEL, OPENAI_TEMPERATURE
 
 class SearchWeb:
     def __init__(self) -> None:

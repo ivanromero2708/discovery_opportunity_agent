@@ -2,7 +2,7 @@ from langgraph.graph import START, END, StateGraph
 from langgraph.checkpoint.memory import MemorySaver
 from .state import InterviewState
 
-from interview_builder_graph.nodes import (
+from .nodes import (
     GenerateQuestion,
     SearchWeb,
     GenerateAnswer,
@@ -10,7 +10,7 @@ from interview_builder_graph.nodes import (
     WriteSection,
 )
 
-from interview_builder_graph.edges import (
+from .edges import (
     RouteMessages,    
 )
 

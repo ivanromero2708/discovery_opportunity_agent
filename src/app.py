@@ -1,4 +1,10 @@
 # src/app.py
+
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import streamlit as st
 from market_research_graph.graph import graph
 from market_research_graph.state import ResearchGraphState
@@ -51,7 +57,7 @@ def generate_research_report():
             "region": st.session_state.research_state['region'],
             "product_services": "Servicios de Investigación de Mercado",
             "mision_vision": "Proveer insights accionables mediante IA avanzada",
-            "strategigc_goals": "Entregar reportes de máxima calidad",
+            "strategic_goals": "Entregar reportes de máxima calidad",
             "human_analyst_feedback": st.session_state.research_state['feedback'],
             "analysts": [],
             "sections": [],
