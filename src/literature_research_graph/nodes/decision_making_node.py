@@ -7,7 +7,7 @@ from langchain_core.runnables import RunnableConfig
 
 
 class DecisionMaking:
-    def __init__(self, config: RunnableConfig) -> None:
+    def __init__(self) -> None:
         pass
     
     def run(self, state: AgentState, config: RunnableConfig):
