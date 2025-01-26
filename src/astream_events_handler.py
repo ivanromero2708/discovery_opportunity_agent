@@ -21,7 +21,7 @@ async def execute_research_flow(messages, placeholder, thread_id, llm_model, llm
         "configurable": {
             "thread_id": thread_id,
             "llm_model": llm_model,  # Selecciona un modelo específico
-            "llm_temoerature": llm_temperature  # Personaliza el comportamiento del asistente
+            "llm_temperature": llm_temperature  # Personaliza el comportamiento del asistente
         }
     }
     

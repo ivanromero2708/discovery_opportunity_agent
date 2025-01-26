@@ -59,7 +59,7 @@ def setup_api_key():
         if not openai_key:
             st.error("OpenAI API Key es requerida")
         else:
-            os.environ["OPENAI_API_KEY"] = openai_key
+            st.session_state.openai_api_key = openai_key
             st.session_state.api_keys_set = True
             logger.info("API Key configurada correctamente")
             st.success("✅ Clave configurada correctamente")
