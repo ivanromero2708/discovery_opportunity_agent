@@ -3,6 +3,7 @@ from langchain_core.runnables import RunnableConfig
 from ..state import AgentState, JudgeOutput
 from ..prompts import judge_prompt
 from ..configuration import AgentConfiguration
+from langchain_core.messages import SystemMessage, AIMessage
 
 class JudgeNode:
     def __init__(self):

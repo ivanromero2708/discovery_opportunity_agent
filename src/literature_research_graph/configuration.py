@@ -31,12 +31,21 @@ class AgentConfiguration(BaseModel):
         cls, config: Optional[RunnableConfig] = None
     ) -> "AgentConfiguration":
         """Create a Configuration instance from a RunnableConfig."""
-        configurable = (
-            config["configurable"] if config and "configurable" in config else {}
-        )
-        values: dict[str, Any] = {
-            f.name: os.environ.get(f.name.upper(), configurable.get(f.name))
-            for f in fields(cls)
-            if f.init
-        }
-        return cls(**{k: v for k, v in values.items() if v})
+        configurable = config.get("configurable", {}) if config else {}
+
+        # Pydantic 2.x -> cls.model_fields.  Pydantic <2.x -> cls.__fields__
+        # Ajusta según tu versión. Supongamos Pydantic 2.x:
+        fields_dict = cls.model_fields
+
+        values: dict[str, Any] = {}
+        for field_name in fields_dict:
+            # Prioridad: ENV var -> config["configurable"] -> lo que ya tenga en la clase
+            env_value = os.environ.get(field_name.upper())
+            config_value = configurable.get(field_name)
+            # Elige el primero que NO sea None
+            final_value = env_value if env_value is not None else config_value
+            if final_value is not None:
+                values[field_name] = final_value
+
+        # Instancia la pydantic model con los valores recolectados
+        return cls(**values)

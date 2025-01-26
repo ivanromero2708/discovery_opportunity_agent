@@ -77,6 +77,20 @@ def initialize_chat():
 import streamlit as st
 import uuid
 
+def initialize_research_state():
+    """
+    Inicializa el diccionario research_state en session_state
+    para evitar el error de atributo inexistente.
+    """
+    if "research_state" not in st.session_state:
+        st.session_state["research_state"] = {
+            "thread_id": None,  
+            "llm_model": "gpt-4o-mini",  # o el default que quieras
+            "temperature": 0.0,
+            "max_research_cycles": 3,
+        }
+
+
 def display_sidebar():
     """Muestra la barra lateral con campos de configuración."""
     with st.sidebar:
@@ -94,9 +108,19 @@ def display_sidebar():
             "Temperatura del Modelo",
             min_value=0.0,
             max_value=2.0,
-            value=0,
+            value=0.0,
             step=0.1,
             help="Controla la creatividad del modelo (0.0 = determinístico, 2.0 = muy creativo)"
+        )
+        
+        # Campo para configurar max_research_cycles
+        st.session_state.research_state['max_research_cycles'] = st.number_input(
+            "Máximo de research cycles",
+            min_value=1,
+            max_value=20,
+            value=st.session_state.research_state['max_research_cycles'],
+            step=1,
+            help="Número máximo de iteraciones de investigación antes de terminar"
         )
         
         st.markdown("---")
@@ -121,18 +145,19 @@ def render_chat_history():
 def main():
     st.title("🔍 Investigador Científico Asistido por IA")
     
+    initialize_research_state()  
+    
     setup_api_key()
     
     if not st.session_state.get("api_keys_set", False):
         st.info("⚠️ Configura tu API Key en la barra lateral")
         return
-
+    
+    display_sidebar()
+    
     initialize_chat()
     render_chat_history()
-    thread_id = st.session_state.research_state['thread_id']
-    config = {"configurable": {"thread_id": thread_id}, }
-    
-    
+   
     if prompt := st.chat_input("Escribe tu pregunta de investigación..."):
         if st.session_state.processing:
             st.warning("Espera a que termine la operación actual")
@@ -156,7 +181,8 @@ def main():
                             placeholder,
                             st.session_state.research_state['thread_id'],
                             st.session_state.research_state['llm_model'],
-                            st.session_state.research_state['temperature']
+                            st.session_state.research_state['temperature'],
+                            st.session_state.research_state['max_research_cycles']
                         )
                     )
                     

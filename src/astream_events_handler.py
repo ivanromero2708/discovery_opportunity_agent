@@ -1,7 +1,7 @@
 import streamlit as st
 from literature_research_graph.graph import workflow
 
-async def execute_research_flow(messages, placeholder, thread_id, llm_model, llm_temperature):
+async def execute_research_flow(messages, placeholder, thread_id, llm_model, llm_temperature, max_research_cycles):
     """
     Maneja el flujo de investigación asíncrono, procesando eventos de herramientas y tokens del modelo.
 
@@ -21,7 +21,8 @@ async def execute_research_flow(messages, placeholder, thread_id, llm_model, llm
         "configurable": {
             "thread_id": thread_id,
             "llm_model": llm_model,  # Selecciona un modelo específico
-            "llm_temperature": llm_temperature  # Personaliza el comportamiento del asistente
+            "llm_temperature": llm_temperature,  # Personaliza el comportamiento del asistente
+            "max_research_cycles": max_research_cycles  # Limita el número de ciclos de investigación
         }
     }
     
