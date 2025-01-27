@@ -1,18 +1,24 @@
+# app_literature_research.py
+
 import os
 import asyncio
 import logging
 import streamlit as st
-from langchain_core.messages import AIMessage, HumanMessage
 from dotenv import load_dotenv
 from contextlib import contextmanager
 from datetime import datetime
 import re
 import uuid  # Para generar un thread_id único
 
+# Módulos de langchain_core que usas en el chat
+from langchain_core.messages import AIMessage, HumanMessage
+
 # Importar el manejador de eventos
 from astream_events_handler import execute_research_flow
 
-# Configuración inicial de logging
+# ------------------------------------------------------
+# 1) Configuración inicial
+# ------------------------------------------------------
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -23,9 +29,10 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Cargamos las variables de entorno del archivo .env
 load_dotenv()
 
-# Configuración inicial de la página
+# Configuración inicial de la página Streamlit
 st.set_page_config(
     page_title="Investigador Científico IA",
     page_icon="🔬",
@@ -33,6 +40,9 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# ------------------------------------------------------
+# 2) Manejo de errores asíncronos
+# ------------------------------------------------------
 @contextmanager
 def handle_async_errors():
     """Maneja errores asíncronos y muestra mensajes en la UI."""
@@ -44,29 +54,11 @@ def handle_async_errors():
         st.session_state.processing = False
         st.rerun()
 
-def setup_api_key():
-    """Configuración segura de API Keys con validación."""
-    st.sidebar.header("🔑 Configuración de API Keys")
-    
-    openai_key = st.sidebar.text_input(
-        "OpenAI API Key",
-        type="password",
-        value=os.getenv("OPENAI_API_KEY", ""),
-        help="Obtén tu clave en https://platform.openai.com/account/api-keys"
-    )
-    
-    if st.sidebar.button("💾 Guardar Clave", type="primary"):
-        if not openai_key:
-            st.error("OpenAI API Key es requerida")
-        else:
-            st.session_state.openai_api_key = openai_key
-            st.session_state.api_keys_set = True
-            logger.info("API Key configurada correctamente")
-            st.success("✅ Clave configurada correctamente")
-            st.rerun()
-
+# ------------------------------------------------------
+# 3) Inicializa estados de la aplicación
+# ------------------------------------------------------
 def initialize_chat():
-    """Inicializa el estado del chat con valores por defecto."""
+    """Inicializa el historial de chat en session_state."""
     if "messages" not in st.session_state:
         st.session_state.messages = [
             AIMessage(content="¡Hola! Soy tu asistente de investigación. ¿En qué tema deseas profundizar hoy?")
@@ -74,23 +66,26 @@ def initialize_chat():
         st.session_state.processing = False
         logger.info("Sesión de chat inicializada")
 
-import streamlit as st
-import uuid
-
 def initialize_research_state():
     """
     Inicializa el diccionario research_state en session_state
-    para evitar el error de atributo inexistente.
+    para manejar configuración de la conversación: 
+    - thread_id
+    - modelo LLM
+    - temperatura
+    - max_research_cycles, etc.
     """
     if "research_state" not in st.session_state:
         st.session_state["research_state"] = {
             "thread_id": None,  
-            "llm_model": "gpt-4o-mini",  # o el default que quieras
+            "llm_model": "gpt-4o-mini",  
             "temperature": 0.0,
             "max_research_cycles": 3,
         }
 
-
+# ------------------------------------------------------
+# 4) Sidebar con controles de configuración (opcional)
+# ------------------------------------------------------
 def display_sidebar():
     """Muestra la barra lateral con campos de configuración."""
     with st.sidebar:
@@ -99,8 +94,8 @@ def display_sidebar():
         # Campo para seleccionar el modelo LLM
         st.session_state.research_state['llm_model'] = st.text_input(
             "Modelo LLM",
-            value="gpt-4o-mini",
-            help="Ejemplos: gpt-4, gpt-4o, gpt-3.5-turbo"
+            value=st.session_state.research_state['llm_model'],
+            help="Ejemplos: gpt-4, gpt-3.5-turbo"
         )
         
         # Campo para configurar la temperatura del modelo
@@ -108,7 +103,7 @@ def display_sidebar():
             "Temperatura del Modelo",
             min_value=0.0,
             max_value=2.0,
-            value=0.0,
+            value=st.session_state.research_state['temperature'],
             step=0.1,
             help="Controla la creatividad del modelo (0.0 = determinístico, 2.0 = muy creativo)"
         )
@@ -132,6 +127,9 @@ def display_sidebar():
             st.session_state.research_state['thread_id'] = new_thread
             st.success(f"Nuevo thread iniciado: {new_thread}")
 
+# ------------------------------------------------------
+# 5) Renderizar el historial de chat
+# ------------------------------------------------------
 def render_chat_history():
     """Renderiza el historial del chat con formato mejorado."""
     for msg in st.session_state.messages:
@@ -142,50 +140,60 @@ def render_chat_history():
             with st.chat_message("user", avatar="👤"):
                 st.markdown(msg.content)
 
+# ------------------------------------------------------
+# 6) Lógica principal de la app
+# ------------------------------------------------------
 def main():
     st.title("🔍 Investigador Científico Asistido por IA")
     
+    # 1) Inicializar estados
     initialize_research_state()  
-    
-    setup_api_key()
-    
-    if not st.session_state.get("api_keys_set", False):
-        st.info("⚠️ Configura tu API Key en la barra lateral")
-        return
-    
-    display_sidebar()
-    
     initialize_chat()
+
+    # 2) Muestra sidebar (puedes comentar si no lo necesitas)
+    display_sidebar()
+
+    # 3) Renderizar historial
     render_chat_history()
-   
+
+    # 4) Capturar una nueva pregunta de investigación
     if prompt := st.chat_input("Escribe tu pregunta de investigación..."):
+        # Evita que se envíen preguntas mientras se procesa
         if st.session_state.processing:
             st.warning("Espera a que termine la operación actual")
             return
 
         st.session_state.processing = True
         st.session_state.messages.append(HumanMessage(content=prompt))
-        logger.info(f"Nueva consulta: {prompt[:100]}...")
-        
+        logger.info(f"Nueva consulta: {prompt[:100]}...")  # Loggea un snippet
+
         with st.chat_message("user", avatar="👤"):
             st.markdown(prompt)
 
+        # 5) Llamar a la función que ejecuta el flow
         with st.chat_message("assistant", avatar="🔬"):
             placeholder = st.empty()
             
             with handle_async_errors(), st.spinner("🔍 Analizando consulta..."):
                 try:
+                    thread_id = st.session_state.research_state['thread_id']
+                    llm_model = st.session_state.research_state['llm_model']
+                    llm_temperature = st.session_state.research_state['temperature']
+                    max_cycles = st.session_state.research_state['max_research_cycles']
+
+                    # Llamada a tu astream pipeline
                     response = asyncio.run(
                         execute_research_flow(
                             st.session_state.messages,
                             placeholder,
-                            st.session_state.research_state['thread_id'],
-                            st.session_state.research_state['llm_model'],
-                            st.session_state.research_state['temperature'],
-                            st.session_state.research_state['max_research_cycles']
+                            thread_id,
+                            llm_model,
+                            llm_temperature,
+                            max_cycles
                         )
                     )
                     
+                    # Mostrar la respuesta final (limpia markdown)
                     if response:
                         clean_response = re.sub(r"```markdown\n|\n```", "", response)
                         final_message = AIMessage(content=clean_response)
@@ -194,6 +202,7 @@ def main():
                 finally:
                     st.session_state.processing = False
                     logger.info("Proceso completado")
+
 
 if __name__ == "__main__":
     main()

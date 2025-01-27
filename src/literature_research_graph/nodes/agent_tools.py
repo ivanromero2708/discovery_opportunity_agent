@@ -156,7 +156,7 @@ def ask_human_feedback(question: str) -> str:
 
 # Lista final de herramientas con configuración aplicada
 tools = [
-    partial(search_papers, config=None),  # Config se inyectará en runtime
+    search_papers,
     download_paper,
     ask_human_feedback
 ]

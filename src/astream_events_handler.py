@@ -53,6 +53,6 @@ async def execute_research_flow(messages, placeholder, thread_id, llm_model, llm
             # Finalización de una llamada a herramienta
             with thoughts_placeholder:
                 if 'output_placeholder' in locals():
-                    output_placeholder.code(event['data'].get('output').content)  # Muestra el output
+                    output_placeholder.code(event['data'].get('output'))  # Muestra el output
 
     return final_text

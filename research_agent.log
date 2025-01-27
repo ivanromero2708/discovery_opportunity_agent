@@ -364,3 +364,1045 @@ openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect A
 During task with name 'decision_making' and id '4e04c7b2-c8d7-f6f5-ef46-429b266d6c7e'
 2025-01-26 13:13:01,704 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
 2025-01-26 13:13:01,708 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:21:14,123 - __main__ - INFO - Nueva consulta: Can you find 8 papers on quantum machine learning?...
+2025-01-26 13:21:16,701 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-01-26 13:21:16,728 - __main__ - INFO - Proceso completado
+2025-01-26 13:21:16,729 - __main__ - ERROR - Error crítico: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************howA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Traceback (most recent call last):
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 50, in handle_async_errors
+    yield
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 185, in main
+    response = asyncio.run(
+               ^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 684, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\astream_events_handler.py", line 30, in execute_research_flow
+    async for event in workflow.astream_events({"messages": messages}, config = config, version="v2"):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1386, in astream_events
+    async for event in event_stream:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 1012, in _astream_events_implementation_v2
+    await task
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 967, in consume_astream
+    async for _ in event_streamer.tap_output_aiter(run_id, stream):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 180, in tap_output_aiter
+    first = await py_anext(output, default=sentinel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\utils\aiter.py", line 76, in anext_impl
+    return await __anext__(iterator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\__init__.py", line 1899, in astream
+    async for _ in runner.atick(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\runner.py", line 370, in atick
+    await arun_with_retry(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\retry.py", line 123, in arun_with_retry
+    async for _ in task.proc.astream(task.input, config):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 608, in astream
+    async for chunk in aiterator:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 180, in tap_output_aiter
+    first = await py_anext(output, default=sentinel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\utils\aiter.py", line 76, in anext_impl
+    return await __anext__(iterator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1016, in astream
+    yield await self.ainvoke(input, config, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 275, in ainvoke
+    ret = await asyncio.create_task(coro, context=context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 588, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 579, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\literature_research_graph\nodes\decision_making_node.py", line 26, in run
+    response = model.invoke([system_prompt] + state["messages"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 3020, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 5352, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 286, in invoke
+    self.generate_prompt(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 790, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 647, in generate
+    raise e
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 637, in generate
+    self._generate_with_cache(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 843, in _generate_with_cache
+    for chunk in self._stream(messages, stop=stop, **kwargs):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_openai\chat_models\base.py", line 725, in _stream
+    with context_manager as response:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\lib\streaming\chat\_completions.py", line 148, in __enter__
+    raw_stream = self.__api_request()
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_utils\_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\resources\chat\completions.py", line 859, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 1283, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 960, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 1064, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************howA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+During task with name 'decision_making' and id '8b4518cb-5916-760a-2764-b54c16852058'
+2025-01-26 13:22:34,943 - langsmith.client - WARNING - Failed to multipart ingest runs: langsmith.utils.LangSmithError: Failed to POST https://api.smith.langchain.com/runs/multipart in LangSmith API. HTTPError('400 Client Error: Bad Request for url: https://api.smith.langchain.com/runs/multipart', '{"detail":"Empty request"}')
+2025-01-26 13:22:37,683 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:22:37,685 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:23:23,616 - __main__ - INFO - Nueva consulta: Can you find 8 papers on quantum machine learning?...
+2025-01-26 13:23:26,173 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-01-26 13:23:26,209 - __main__ - INFO - Proceso completado
+2025-01-26 13:23:26,210 - __main__ - ERROR - Error crítico: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************howA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Traceback (most recent call last):
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 50, in handle_async_errors
+    yield
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 185, in main
+    response = asyncio.run(
+               ^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 684, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\astream_events_handler.py", line 30, in execute_research_flow
+    async for event in workflow.astream_events({"messages": messages}, config = config, version="v2"):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1386, in astream_events
+    async for event in event_stream:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 1012, in _astream_events_implementation_v2
+    await task
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 967, in consume_astream
+    async for _ in event_streamer.tap_output_aiter(run_id, stream):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 180, in tap_output_aiter
+    first = await py_anext(output, default=sentinel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\utils\aiter.py", line 76, in anext_impl
+    return await __anext__(iterator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\__init__.py", line 1899, in astream
+    async for _ in runner.atick(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\runner.py", line 370, in atick
+    await arun_with_retry(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\retry.py", line 123, in arun_with_retry
+    async for _ in task.proc.astream(task.input, config):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 608, in astream
+    async for chunk in aiterator:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 180, in tap_output_aiter
+    first = await py_anext(output, default=sentinel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\utils\aiter.py", line 76, in anext_impl
+    return await __anext__(iterator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1016, in astream
+    yield await self.ainvoke(input, config, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 275, in ainvoke
+    ret = await asyncio.create_task(coro, context=context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 588, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 579, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\literature_research_graph\nodes\decision_making_node.py", line 26, in run
+    response = model.invoke([system_prompt] + state["messages"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 3020, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 5352, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 286, in invoke
+    self.generate_prompt(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 790, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 647, in generate
+    raise e
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 637, in generate
+    self._generate_with_cache(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 843, in _generate_with_cache
+    for chunk in self._stream(messages, stop=stop, **kwargs):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_openai\chat_models\base.py", line 725, in _stream
+    with context_manager as response:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\lib\streaming\chat\_completions.py", line 148, in __enter__
+    raw_stream = self.__api_request()
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_utils\_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\resources\chat\completions.py", line 859, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 1283, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 960, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 1064, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************howA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+During task with name 'decision_making' and id '48e34766-fbe9-e9e6-3b02-1efcd8a7ac19'
+2025-01-26 13:23:27,075 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:23:27,076 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:24:55,807 - __main__ - INFO - Nueva consulta: Can you find 8 papers on quantum machine learning?...
+2025-01-26 13:25:03,742 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:25:03,873 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:25:03,953 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-01-26 13:25:04,055 - __main__ - INFO - Proceso completado
+2025-01-26 13:25:04,126 - __main__ - ERROR - Error crítico: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************howA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Traceback (most recent call last):
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 50, in handle_async_errors
+    yield
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 185, in main
+    response = asyncio.run(
+               ^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 684, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\astream_events_handler.py", line 30, in execute_research_flow
+    async for event in workflow.astream_events({"messages": messages}, config = config, version="v2"):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1386, in astream_events
+    async for event in event_stream:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 1012, in _astream_events_implementation_v2
+    await task
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 967, in consume_astream
+    async for _ in event_streamer.tap_output_aiter(run_id, stream):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 180, in tap_output_aiter
+    first = await py_anext(output, default=sentinel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\utils\aiter.py", line 76, in anext_impl
+    return await __anext__(iterator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\__init__.py", line 1899, in astream
+    async for _ in runner.atick(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\runner.py", line 370, in atick
+    await arun_with_retry(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\retry.py", line 123, in arun_with_retry
+    async for _ in task.proc.astream(task.input, config):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 608, in astream
+    async for chunk in aiterator:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 180, in tap_output_aiter
+    first = await py_anext(output, default=sentinel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\utils\aiter.py", line 76, in anext_impl
+    return await __anext__(iterator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1016, in astream
+    yield await self.ainvoke(input, config, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 275, in ainvoke
+    ret = await asyncio.create_task(coro, context=context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 588, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 579, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\literature_research_graph\nodes\decision_making_node.py", line 26, in run
+    response = model.invoke([system_prompt] + state["messages"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 3020, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 5352, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 286, in invoke
+    self.generate_prompt(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 790, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 647, in generate
+    raise e
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 637, in generate
+    self._generate_with_cache(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 843, in _generate_with_cache
+    for chunk in self._stream(messages, stop=stop, **kwargs):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_openai\chat_models\base.py", line 725, in _stream
+    with context_manager as response:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\lib\streaming\chat\_completions.py", line 148, in __enter__
+    raw_stream = self.__api_request()
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_utils\_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\resources\chat\completions.py", line 859, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 1283, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 960, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 1064, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************howA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+During task with name 'decision_making' and id '427c0d7c-569e-837b-c39d-e8472a561f7b'
+2025-01-26 13:25:04,653 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:25:04,937 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:26:32,307 - __main__ - INFO - Sesión de chat inicializada
+2025-01-26 13:26:47,657 - __main__ - INFO - Nueva consulta: Can you find 8 papers on quantum machine learning?...
+2025-01-26 13:26:54,790 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-01-26 13:26:54,810 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:26:55,165 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:26:55,552 - __main__ - INFO - Proceso completado
+2025-01-26 13:26:55,633 - __main__ - ERROR - Error crítico: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************howA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Traceback (most recent call last):
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 50, in handle_async_errors
+    yield
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 185, in main
+    response = asyncio.run(
+               ^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 684, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\astream_events_handler.py", line 30, in execute_research_flow
+    async for event in workflow.astream_events({"messages": messages}, config = config, version="v2"):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1386, in astream_events
+    async for event in event_stream:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 1012, in _astream_events_implementation_v2
+    await task
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 967, in consume_astream
+    async for _ in event_streamer.tap_output_aiter(run_id, stream):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 180, in tap_output_aiter
+    first = await py_anext(output, default=sentinel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\utils\aiter.py", line 76, in anext_impl
+    return await __anext__(iterator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\__init__.py", line 1899, in astream
+    async for _ in runner.atick(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\runner.py", line 370, in atick
+    await arun_with_retry(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\retry.py", line 123, in arun_with_retry
+    async for _ in task.proc.astream(task.input, config):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 608, in astream
+    async for chunk in aiterator:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 180, in tap_output_aiter
+    first = await py_anext(output, default=sentinel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\utils\aiter.py", line 76, in anext_impl
+    return await __anext__(iterator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1016, in astream
+    yield await self.ainvoke(input, config, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 275, in ainvoke
+    ret = await asyncio.create_task(coro, context=context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 588, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 579, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\literature_research_graph\nodes\decision_making_node.py", line 26, in run
+    response = model.invoke([system_prompt] + state["messages"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 3020, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 5352, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 286, in invoke
+    self.generate_prompt(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 790, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 647, in generate
+    raise e
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 637, in generate
+    self._generate_with_cache(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 843, in _generate_with_cache
+    for chunk in self._stream(messages, stop=stop, **kwargs):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_openai\chat_models\base.py", line 725, in _stream
+    with context_manager as response:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\lib\streaming\chat\_completions.py", line 148, in __enter__
+    raw_stream = self.__api_request()
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_utils\_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\resources\chat\completions.py", line 859, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 1283, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 960, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 1064, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************howA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+During task with name 'decision_making' and id 'b7f2651a-6d41-1e5a-f7b6-4e90123bc4e5'
+2025-01-26 13:26:55,939 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:26:56,997 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:28:03,537 - __main__ - INFO - Sesión de chat inicializada
+2025-01-26 13:28:12,667 - __main__ - INFO - Nueva consulta: Can you find 8 papers on quantum machine learning?...
+2025-01-26 13:28:14,902 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:28:14,904 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:28:15,211 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-01-26 13:28:15,242 - __main__ - INFO - Proceso completado
+2025-01-26 13:28:15,246 - __main__ - ERROR - Error crítico: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************howA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Traceback (most recent call last):
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 50, in handle_async_errors
+    yield
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 185, in main
+    response = asyncio.run(
+               ^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 684, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\astream_events_handler.py", line 30, in execute_research_flow
+    async for event in workflow.astream_events({"messages": messages}, config = config, version="v2"):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1386, in astream_events
+    async for event in event_stream:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 1012, in _astream_events_implementation_v2
+    await task
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 967, in consume_astream
+    async for _ in event_streamer.tap_output_aiter(run_id, stream):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 180, in tap_output_aiter
+    first = await py_anext(output, default=sentinel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\utils\aiter.py", line 76, in anext_impl
+    return await __anext__(iterator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\__init__.py", line 1899, in astream
+    async for _ in runner.atick(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\runner.py", line 370, in atick
+    await arun_with_retry(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\retry.py", line 123, in arun_with_retry
+    async for _ in task.proc.astream(task.input, config):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 608, in astream
+    async for chunk in aiterator:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 180, in tap_output_aiter
+    first = await py_anext(output, default=sentinel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\utils\aiter.py", line 76, in anext_impl
+    return await __anext__(iterator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1016, in astream
+    yield await self.ainvoke(input, config, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 275, in ainvoke
+    ret = await asyncio.create_task(coro, context=context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 588, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 579, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\literature_research_graph\nodes\decision_making_node.py", line 26, in run
+    response = model.invoke([system_prompt] + state["messages"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 3020, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 5352, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 286, in invoke
+    self.generate_prompt(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 790, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 647, in generate
+    raise e
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 637, in generate
+    self._generate_with_cache(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 843, in _generate_with_cache
+    for chunk in self._stream(messages, stop=stop, **kwargs):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_openai\chat_models\base.py", line 725, in _stream
+    with context_manager as response:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\lib\streaming\chat\_completions.py", line 148, in __enter__
+    raw_stream = self.__api_request()
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_utils\_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\resources\chat\completions.py", line 859, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 1283, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 960, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 1064, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************howA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+During task with name 'decision_making' and id 'c7a0781f-35f2-8eff-89ec-d35b73dcd8c5'
+2025-01-26 13:28:16,018 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:28:16,030 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:30:17,658 - __main__ - INFO - Sesión de chat inicializada
+2025-01-26 13:30:29,237 - __main__ - INFO - Nueva consulta: Can you find 8 papers on quantum machine learning?...
+2025-01-26 13:30:31,914 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:30:31,915 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:30:32,729 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-01-26 13:30:32,787 - __main__ - INFO - Proceso completado
+2025-01-26 13:30:32,789 - __main__ - ERROR - Error crítico: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_schema' is not supported with this model. Learn more about supported models at the Structured Outputs guide: https://platform.openai.com/docs/guides/structured-outputs", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+Traceback (most recent call last):
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 50, in handle_async_errors
+    yield
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 185, in main
+    response = asyncio.run(
+               ^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 684, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\astream_events_handler.py", line 30, in execute_research_flow
+    async for event in workflow.astream_events({"messages": messages}, config = config, version="v2"):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1386, in astream_events
+    async for event in event_stream:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 1012, in _astream_events_implementation_v2
+    await task
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 967, in consume_astream
+    async for _ in event_streamer.tap_output_aiter(run_id, stream):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 180, in tap_output_aiter
+    first = await py_anext(output, default=sentinel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\utils\aiter.py", line 76, in anext_impl
+    return await __anext__(iterator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\__init__.py", line 1899, in astream
+    async for _ in runner.atick(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\runner.py", line 370, in atick
+    await arun_with_retry(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\retry.py", line 123, in arun_with_retry
+    async for _ in task.proc.astream(task.input, config):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 608, in astream
+    async for chunk in aiterator:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 180, in tap_output_aiter
+    first = await py_anext(output, default=sentinel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\utils\aiter.py", line 76, in anext_impl
+    return await __anext__(iterator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1016, in astream
+    yield await self.ainvoke(input, config, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 275, in ainvoke
+    ret = await asyncio.create_task(coro, context=context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 588, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 579, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\literature_research_graph\nodes\decision_making_node.py", line 26, in run
+    response = model.invoke([system_prompt] + state["messages"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 3020, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 5352, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 286, in invoke
+    self.generate_prompt(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 790, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 647, in generate
+    raise e
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 637, in generate
+    self._generate_with_cache(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 843, in _generate_with_cache
+    for chunk in self._stream(messages, stop=stop, **kwargs):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_openai\chat_models\base.py", line 748, in _stream
+    _handle_openai_bad_request(e)
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_openai\chat_models\base.py", line 408, in _handle_openai_bad_request
+    raise e
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_openai\chat_models\base.py", line 725, in _stream
+    with context_manager as response:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\lib\streaming\chat\_completions.py", line 148, in __enter__
+    raw_stream = self.__api_request()
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_utils\_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\resources\chat\completions.py", line 859, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 1283, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 960, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_base_client.py", line 1064, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_schema' is not supported with this model. Learn more about supported models at the Structured Outputs guide: https://platform.openai.com/docs/guides/structured-outputs", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+During task with name 'decision_making' and id 'f60b40d9-e557-4b3f-dcc0-87b0851000d6'
+2025-01-26 13:30:32,984 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:30:32,995 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:31:16,419 - __main__ - INFO - Nueva consulta: Can you find 8 papers on quantum machine learning?...
+2025-01-26 13:31:19,198 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:31:19,203 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:31:20,450 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 13:31:21,062 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:31:21,388 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:31:24,874 - __main__ - INFO - Proceso completado
+2025-01-26 13:31:24,877 - __main__ - ERROR - Error crítico: 'functools.partial' object has no attribute 'args_schema'
+Traceback (most recent call last):
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 50, in handle_async_errors
+    yield
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 185, in main
+    response = asyncio.run(
+               ^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 684, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\astream_events_handler.py", line 30, in execute_research_flow
+    async for event in workflow.astream_events({"messages": messages}, config = config, version="v2"):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1386, in astream_events
+    async for event in event_stream:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 1012, in _astream_events_implementation_v2
+    await task
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 967, in consume_astream
+    async for _ in event_streamer.tap_output_aiter(run_id, stream):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 203, in tap_output_aiter
+    async for chunk in output:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\__init__.py", line 1899, in astream
+    async for _ in runner.atick(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\runner.py", line 370, in atick
+    await arun_with_retry(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\retry.py", line 123, in arun_with_retry
+    async for _ in task.proc.astream(task.input, config):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 608, in astream
+    async for chunk in aiterator:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 180, in tap_output_aiter
+    first = await py_anext(output, default=sentinel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\utils\aiter.py", line 76, in anext_impl
+    return await __anext__(iterator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1016, in astream
+    yield await self.ainvoke(input, config, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 275, in ainvoke
+    ret = await asyncio.create_task(coro, context=context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 588, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 579, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\literature_research_graph\nodes\planning_node.py", line 24, in run
+    content=planning_prompt.format(tools=format_tools_description(tools))
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\literature_research_graph\prompts.py", line 97, in format_tools_description
+    params = tool.args_schema.schema() if tool.args_schema else {}
+                                          ^^^^^^^^^^^^^^^^
+AttributeError: 'functools.partial' object has no attribute 'args_schema'
+During task with name 'planning' and id 'cc5f2e30-ca03-a201-ad83-7bdd15bb841b'
+2025-01-26 13:33:45,651 - __main__ - INFO - Nueva consulta: Traceback (most recent call last):
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportuni...
+2025-01-26 13:33:48,105 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:33:48,106 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:33:49,289 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 13:33:49,680 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:33:49,744 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:33:52,807 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 13:33:56,924 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 13:33:57,139 - __main__ - INFO - Proceso completado
+2025-01-26 13:33:57,140 - __main__ - ERROR - Error crítico: 'dict' object has no attribute 'max_research_cycles'
+Traceback (most recent call last):
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 50, in handle_async_errors
+    yield
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 185, in main
+    response = asyncio.run(
+               ^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 684, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\astream_events_handler.py", line 30, in execute_research_flow
+    async for event in workflow.astream_events({"messages": messages}, config = config, version="v2"):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1386, in astream_events
+    async for event in event_stream:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 1012, in _astream_events_implementation_v2
+    await task
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 967, in consume_astream
+    async for _ in event_streamer.tap_output_aiter(run_id, stream):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 203, in tap_output_aiter
+    async for chunk in output:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\__init__.py", line 1899, in astream
+    async for _ in runner.atick(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\runner.py", line 370, in atick
+    await arun_with_retry(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\retry.py", line 123, in arun_with_retry
+    async for _ in task.proc.astream(task.input, config):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 608, in astream
+    async for chunk in aiterator:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 180, in tap_output_aiter
+    first = await py_anext(output, default=sentinel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\utils\aiter.py", line 76, in anext_impl
+    return await __anext__(iterator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1471, in atransform
+    async for output in self.astream(final, config, **kwargs):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1016, in astream
+    yield await self.ainvoke(input, config, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 275, in ainvoke
+    ret = await asyncio.create_task(coro, context=context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\graph\graph.py", line 116, in _aroute
+    result = await self.path.ainvoke(value, config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 263, in ainvoke
+    ret = await asyncio.create_task(coro, context=context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 588, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 579, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\literature_research_graph\edges\should_continue.py", line 16, in run
+    return {"should_continue": self.should_continue(state, config)}
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\literature_research_graph\edges\should_continue.py", line 11, in should_continue
+    max_cycles_reached = state.get("research_cycles", 0) >= config.max_research_cycles
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'max_research_cycles'
+During task with name 'agent' and id '60e0f888-d2a3-0604-7336-552a0d3db800'
+2025-01-26 13:34:13,458 - __main__ - INFO - Nueva consulta: Can you find 8 papers on quantum machine learning?...
+2025-01-26 13:34:15,895 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:34:15,897 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:34:16,606 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 13:34:16,873 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:34:16,874 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:34:19,307 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 13:34:22,607 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 13:34:22,874 - __main__ - INFO - Proceso completado
+2025-01-26 13:34:22,874 - __main__ - ERROR - Error crítico: 'dict' object has no attribute 'max_research_cycles'
+Traceback (most recent call last):
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 50, in handle_async_errors
+    yield
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 185, in main
+    response = asyncio.run(
+               ^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 684, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\astream_events_handler.py", line 30, in execute_research_flow
+    async for event in workflow.astream_events({"messages": messages}, config = config, version="v2"):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1386, in astream_events
+    async for event in event_stream:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 1012, in _astream_events_implementation_v2
+    await task
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 967, in consume_astream
+    async for _ in event_streamer.tap_output_aiter(run_id, stream):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 203, in tap_output_aiter
+    async for chunk in output:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\__init__.py", line 1899, in astream
+    async for _ in runner.atick(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\runner.py", line 370, in atick
+    await arun_with_retry(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\retry.py", line 123, in arun_with_retry
+    async for _ in task.proc.astream(task.input, config):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 608, in astream
+    async for chunk in aiterator:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 180, in tap_output_aiter
+    first = await py_anext(output, default=sentinel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\utils\aiter.py", line 76, in anext_impl
+    return await __anext__(iterator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1471, in atransform
+    async for output in self.astream(final, config, **kwargs):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1016, in astream
+    yield await self.ainvoke(input, config, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 275, in ainvoke
+    ret = await asyncio.create_task(coro, context=context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\graph\graph.py", line 116, in _aroute
+    result = await self.path.ainvoke(value, config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 263, in ainvoke
+    ret = await asyncio.create_task(coro, context=context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 588, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 579, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\literature_research_graph\edges\should_continue.py", line 16, in run
+    return {"should_continue": self.should_continue(state, config)}
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\literature_research_graph\edges\should_continue.py", line 11, in should_continue
+    max_cycles_reached = state.get("research_cycles", 0) >= config.max_research_cycles
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'max_research_cycles'
+During task with name 'agent' and id '6fb4c11f-ac3a-11f1-2637-4fd3b11cca0b'
+2025-01-26 13:35:46,198 - __main__ - INFO - Sesión de chat inicializada
+2025-01-26 13:35:54,542 - __main__ - INFO - Nueva consulta: Can you find 8 papers on quantum machine learning?...
+2025-01-26 13:35:57,448 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:35:57,449 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:35:58,240 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 13:35:58,614 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:35:58,627 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:36:00,687 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 13:36:03,879 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 13:36:04,230 - __main__ - INFO - Proceso completado
+2025-01-26 13:36:04,232 - __main__ - ERROR - Error crítico: 'StructuredTool' object has no attribute 'partial'
+Traceback (most recent call last):
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 50, in handle_async_errors
+    yield
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 185, in main
+    response = asyncio.run(
+               ^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 684, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\astream_events_handler.py", line 30, in execute_research_flow
+    async for event in workflow.astream_events({"messages": messages}, config = config, version="v2"):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1386, in astream_events
+    async for event in event_stream:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 1012, in _astream_events_implementation_v2
+    await task
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 967, in consume_astream
+    async for _ in event_streamer.tap_output_aiter(run_id, stream):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 203, in tap_output_aiter
+    async for chunk in output:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\__init__.py", line 1899, in astream
+    async for _ in runner.atick(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\runner.py", line 370, in atick
+    await arun_with_retry(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\retry.py", line 123, in arun_with_retry
+    async for _ in task.proc.astream(task.input, config):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 608, in astream
+    async for chunk in aiterator:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 180, in tap_output_aiter
+    first = await py_anext(output, default=sentinel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\utils\aiter.py", line 76, in anext_impl
+    return await __anext__(iterator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1016, in astream
+    yield await self.ainvoke(input, config, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 275, in ainvoke
+    ret = await asyncio.create_task(coro, context=context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 588, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 579, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\literature_research_graph\nodes\tools_node.py", line 21, in run
+    tool = tools_dict[tool_call["name"]].partial(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 856, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'StructuredTool' object has no attribute 'partial'
+During task with name 'tools' and id '0e053c1e-334d-6148-070f-e4c2f490856b'
+2025-01-26 13:38:36,344 - __main__ - INFO - Nueva consulta: 
+Can you find 8 papers on quantum machine learning?...
+2025-01-26 13:38:38,344 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:38:38,345 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:38:39,191 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 13:38:39,574 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:38:39,574 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:38:41,807 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 13:38:45,107 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 13:38:46,963 - urllib3.poolmanager - INFO - Redirecting https://api.core.ac.uk/v3/search/outputs?q=quantum+machine+learning&limit=8 -> https://api.core.ac.uk/v3/search/outputs/?q=quantum+machine+learning&limit=8
+2025-01-26 13:38:49,391 - __main__ - INFO - Proceso completado
+2025-01-26 13:38:49,391 - __main__ - ERROR - Error crítico: 'str' object has no attribute 'content'
+Traceback (most recent call last):
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 50, in handle_async_errors
+    yield
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 185, in main
+    response = asyncio.run(
+               ^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 684, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\astream_events_handler.py", line 56, in execute_research_flow
+    output_placeholder.code(event['data'].get('output').content)  # Muestra el output
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'content'
+2025-01-26 13:42:54,214 - __main__ - INFO - Nueva consulta: 
+Can you find 8 papers on quantum machine learning?...
+2025-01-26 13:42:56,589 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:42:56,591 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:42:57,491 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 13:42:57,823 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:42:57,824 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:43:00,223 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 13:43:03,074 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 13:43:04,674 - urllib3.poolmanager - INFO - Redirecting https://api.core.ac.uk/v3/search/outputs?q=quantum+machine+learning&limit=8 -> https://api.core.ac.uk/v3/search/outputs/?q=quantum+machine+learning&limit=8
+2025-01-26 13:43:09,338 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 13:43:24,132 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:43:24,133 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:43:24,756 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 13:43:25,111 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 13:43:25,123 - __main__ - INFO - Respuesta generada exitosamente
+2025-01-26 13:43:25,133 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 13:43:25,147 - __main__ - INFO - Proceso completado

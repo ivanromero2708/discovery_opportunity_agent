@@ -1,51 +1,74 @@
-from pydantic import (
-    BaseModel,
-    Field,
-)
+# configuration.py
+
 import os
 from dotenv import load_dotenv
-from langchain_core.runnables import RunnableConfig
-from dataclasses import dataclass, fields
 from typing import Any, Optional
+from pydantic import BaseModel, Field
+from langchain_core.runnables import RunnableConfig
 
-# Cargar variables del entorno
+# Carga automáticamente las variables de entorno del archivo .env
 load_dotenv()
 
 class AgentConfiguration(BaseModel):
-    "Configuration for the Agent in the literature research workflow"
+    """
+    Configuración para el agente de investigación 
+    (p.ej., en literature_research_graph).
+    """
+
     max_research_cycles: int = Field(
-        description = "The maximum number of research cycles to perform before ending the workflow.",
+        default=3,
+        description="Número máximo de ciclos de investigación antes de terminar el flujo."
     )
     llm_model: str = Field(
-        description="The selected LLM model"
+        default="gpt-4o-mini",
+        description="El modelo LLM seleccionado."
     )
     llm_temperature: float = Field(
-        description="The temperature to use in the LLM model",
+        default=0.0,
+        description="La temperatura a usar con el LLM."
     )
-    openai_api_key: str = os.getenv("OPENAI_API_KEY")
-    core_api_key: str = os.getenv("CORE_API_KEY")
-    LANGCHAIN_API_KEY: str = os.getenv("LANGCHAIN_API_KEY", "")  # Opcional para LangSmith
-    
+    openai_api_key: str = Field(
+        default_factory=lambda: os.getenv("OPENAI_API_KEY", ""),
+        description="OpenAI API key cargada desde .env."
+    )
+    core_api_key: str = Field(
+        default_factory=lambda: os.getenv("CORE_API_KEY", ""),
+        description="CORE API key para búsquedas académicas."
+    )
+    LANGCHAIN_API_KEY: str = Field(
+        default_factory=lambda: os.getenv("LANGCHAIN_API_KEY", ""),
+        description="Langchain/LangSmith API key para tracking, opcional."
+    )
+
     @classmethod
     def from_runnable_config(
-        cls, config: Optional[RunnableConfig] = None
+        cls,
+        config: Optional[RunnableConfig] = None
     ) -> "AgentConfiguration":
-        """Create a Configuration instance from a RunnableConfig."""
-        configurable = config.get("configurable", {}) if config else {}
+        """
+        Genera la configuración final usando:
+          1) Valores por defecto o leídos de .env
+          2) Sobrescritura con config["configurable"], si existe.
+        """
+        # Crea una instancia base con los defaults / .env
+        instance = cls()
 
-        # Pydantic 2.x -> cls.model_fields.  Pydantic <2.x -> cls.__fields__
-        # Ajusta según tu versión. Supongamos Pydantic 2.x:
-        fields_dict = cls.model_fields
+        if config:
+            # Lee el dict "configurable" (si existe)
+            configurable = config.get("configurable", {})
+            
+            # Para cada campo que desees sobrescribir
+            if "max_research_cycles" in configurable:
+                instance.max_research_cycles = configurable["max_research_cycles"]
+            if "llm_model" in configurable:
+                instance.llm_model = configurable["llm_model"]
+            if "llm_temperature" in configurable:
+                instance.llm_temperature = configurable["llm_temperature"]
+            if "openai_api_key" in configurable:
+                instance.openai_api_key = configurable["openai_api_key"]
+            if "core_api_key" in configurable:
+                instance.core_api_key = configurable["core_api_key"]
+            if "LANGCHAIN_API_KEY" in configurable:
+                instance.LANGCHAIN_API_KEY = configurable["LANGCHAIN_API_KEY"]
 
-        values: dict[str, Any] = {}
-        for field_name in fields_dict:
-            # Prioridad: ENV var -> config["configurable"] -> lo que ya tenga en la clase
-            env_value = os.environ.get(field_name.upper())
-            config_value = configurable.get(field_name)
-            # Elige el primero que NO sea None
-            final_value = env_value if env_value is not None else config_value
-            if final_value is not None:
-                values[field_name] = final_value
-
-        # Instancia la pydantic model con los valores recolectados
-        return cls(**values)
+        return instance
