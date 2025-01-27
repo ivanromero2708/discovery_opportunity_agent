@@ -167,12 +167,11 @@ def main():
         st.session_state.messages.append(HumanMessage(content=prompt))
         logger.info(f"Nueva consulta: {prompt[:100]}...")  # Loggea un snippet
 
-        with st.chat_message("user", avatar="👤"):
-            st.markdown(prompt)
+        st.chat_message("user", avatar="👤").write(prompt)
 
         # 5) Llamar a la función que ejecuta el flow
         with st.chat_message("assistant", avatar="🔬"):
-            placeholder = st.empty()
+            placeholder = st.container()
             
             with handle_async_errors(), st.spinner("🔍 Analizando consulta..."):
                 try:

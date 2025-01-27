@@ -9,6 +9,8 @@ from langchain_core.runnables import RunnableConfig
 # Carga automáticamente las variables de entorno del archivo .env
 load_dotenv()
 
+LANGCHAIN_TRACING_V2 = os.getenv("LANGCHAIN_TRACING_V2", "false").lower() == "true"
+
 class AgentConfiguration(BaseModel):
     """
     Configuración para el agente de investigación 
