@@ -1,0 +1,2 @@
+class SearchWeb:
+    pass

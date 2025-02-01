@@ -1,13 +1,13 @@
 from ..state import InterviewState
 from ..prompts import section_writer_instructions
 from langchain_core.messages import HumanMessage, SystemMessage
-from utils.config import OPENAI_API_KEY, OPENAI_MODEL, OPENAI_TEMPERATURE
+from utils.config import OPENAI_API_KEY, SMART_OPENAI_MODEL, OPENAI_TEMPERATURE
 from langchain_openai import ChatOpenAI
 
 class WriteSection:
     def __init__(self) -> None:
         self.model = ChatOpenAI(
-            model=OPENAI_MODEL,
+            model=SMART_OPENAI_MODEL,
             temperature=OPENAI_TEMPERATURE,
             api_key=OPENAI_API_KEY
         )

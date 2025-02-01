@@ -11,7 +11,7 @@ class RouteMessages:
         
         # Get messages
         messages = state["messages"]
-        max_num_turns = state.get('max_num_turns',2)
+        max_num_turns = state.get('max_num_turns',4)
 
         # Check the number of expert answers 
         num_responses = len(

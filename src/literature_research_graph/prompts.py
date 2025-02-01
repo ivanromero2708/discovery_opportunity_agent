@@ -90,34 +90,5 @@ import json
 from typing import List
 from langchain_core.tools import BaseTool
 
-def format_tools_description(tools: List[BaseTool]) -> str:
-    """Generate professional documentation for research tools"""
-    tool_docs = []
-    for tool in tools:
-        params = tool.args_schema.schema() if tool.args_schema else {}
-        param_table = "\n".join(
-            f"- **{name}**: {schema.get('description', '')} "
-            f"(Type: {schema.get('type', 'str')}, "
-            f"Example: {schema.get('example', 'N/A')})"
-            for name, schema in params.get("properties", {}).items()
-        )
-            
-        example_args = json.dumps(tool.example, indent=2) if hasattr(tool, 'example') else ""
-            
-        tool_doc = f"""
-        ## 🛠️ {tool.name}
-        **{tool.description}**
-
-        ### Parameters:
-        {param_table}
-
-        ### Example Usage:
-        ```python
-        from agent_tools import {tool.name.replace('-', '_')}
-
-        result = {tool.name}(
-            {example_args}
-        )
-        ```"""
-        tool_docs.append(tool_doc)    
-    return "\n\n---\n\n".join(tool_docs)
+def format_tools_description(tools: list[BaseTool]) -> str:
+    return "\n\n".join([f"- {tool.name}: {tool.description}\n Input arguments: {tool.args}" for tool in tools])

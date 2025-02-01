@@ -1,5 +1,6 @@
 from ..state import ResearchGraphState
 from langchain_openai import ChatOpenAI
+from langchain_openai.chat_models.base import BaseChatOpenAI
 from ..prompts import intro_conclusion_instructions
 from langchain_core.messages import HumanMessage
 import os

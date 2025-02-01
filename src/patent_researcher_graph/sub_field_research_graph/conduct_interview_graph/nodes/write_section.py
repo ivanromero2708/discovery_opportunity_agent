@@ -1,0 +1,2 @@
+class WriteSection:
+    pass

@@ -1,0 +1,7 @@
+from .subdivide_by_core_process_technology import SubdivideByCoreProcessTechnology
+from .subdivide_by_end_application import SubdivideByEndApplication
+from .subdivide_by_market_focus import SubdivideByMarketFocus
+from .subdivide_by_strategic_angle import SubdivideByStrategicAngle
+from .consolidate_sub_research_fields import ConsolidateSubResearchFields
+
+__all__ = ["SubdivideByCoreProcessTechnology", "SubdivideByEndApplication", "SubdivideByMarketFocus", "SubdivideByStrategicAngle", "ConsolidateSubResearchFields"]

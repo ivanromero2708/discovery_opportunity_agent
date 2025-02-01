@@ -1,0 +1,2 @@
+class GenerateQuestion:
+    pass

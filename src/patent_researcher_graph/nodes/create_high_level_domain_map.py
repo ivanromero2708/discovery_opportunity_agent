@@ -1,0 +1,3 @@
+
+class CreateHighLevelDomainResearchMap:
+    pass

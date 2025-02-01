@@ -1511,3 +1511,477 @@ Can you find 8 papers on quantum machine learning?...
 2025-01-26 19:46:38,939 - __main__ - INFO - Proceso completado
 2025-01-26 19:46:39,191 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
 2025-01-26 19:46:39,205 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 19:53:45,372 - __main__ - INFO - Nueva consulta: Find recent papers (2023-2024) about CRISPR applications in treating genetic disorders, focusing on ...
+2025-01-26 19:53:49,671 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 19:53:53,876 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 19:54:37,473 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 19:55:07,197 - langsmith.client - WARNING - Failed to multipart ingest runs: langsmith.utils.LangSmithError: Failed to POST https://api.smith.langchain.com/runs/multipart in LangSmith API. HTTPError('400 Client Error: Bad Request for url: https://api.smith.langchain.com/runs/multipart', '{"detail":"Empty request"}')
+2025-01-26 19:55:08,894 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 19:55:08,898 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 19:55:08,912 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 19:55:08,912 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 19:55:09,254 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 19:55:09,949 - __main__ - INFO - Respuesta generada exitosamente
+2025-01-26 19:55:09,950 - __main__ - INFO - Proceso completado
+2025-01-26 19:55:10,233 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 19:55:10,235 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:16:44,892 - __main__ - INFO - Sesión de chat inicializada
+2025-01-26 20:17:28,475 - __main__ - INFO - Nueva consulta: Find and analyze papers from 2023-2024 about the application of transformer architectures in protein...
+2025-01-26 20:17:32,554 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:17:32,556 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:17:32,829 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:17:33,183 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:17:33,184 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:17:35,978 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:17:49,719 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:17:50,938 - urllib3.poolmanager - INFO - Redirecting https://api.core.ac.uk/v3/search/outputs?q=transformer+architectures+protein+folding+prediction+novel+modifications+experimental+validation&limit=5 -> https://api.core.ac.uk/v3/search/outputs/?q=transformer+architectures+protein+folding+prediction+novel+modifications+experimental+validation&limit=5
+2025-01-26 20:17:56,806 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:18:21,865 - __main__ - INFO - Proceso completado
+2025-01-26 20:18:21,866 - __main__ - ERROR - Error crítico: peer closed connection without sending complete message body (incomplete chunked read)
+Traceback (most recent call last):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpcore\_exceptions.py", line 10, in map_exceptions
+    yield
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpcore\_sync\http11.py", line 209, in _receive_event
+    event = self._h11_state.next_event()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\h11\_connection.py", line 469, in next_event
+    event = self._extract_next_receive_event()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\h11\_connection.py", line 419, in _extract_next_receive_event
+    event = self._reader.read_eof()  # type: ignore[attr-defined]
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\h11\_readers.py", line 204, in read_eof
+    raise RemoteProtocolError(
+h11._util.RemoteProtocolError: peer closed connection without sending complete message body (incomplete chunked read)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpx\_transports\default.py", line 72, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpx\_transports\default.py", line 116, in __iter__
+    for part in self._httpcore_stream:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpcore\_sync\connection_pool.py", line 361, in __iter__
+    for part in self._stream:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpcore\_sync\http11.py", line 337, in __iter__
+    raise exc
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpcore\_sync\http11.py", line 329, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpcore\_sync\http11.py", line 198, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpcore\_sync\http11.py", line 208, in _receive_event
+    with map_exceptions({h11.RemoteProtocolError: RemoteProtocolError}):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.RemoteProtocolError: peer closed connection without sending complete message body (incomplete chunked read)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 50, in handle_async_errors
+    yield
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 184, in main
+    response = asyncio.run(
+               ^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 684, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\astream_events_handler.py", line 30, in execute_research_flow
+    async for event in workflow.astream_events({"messages": messages}, config = config, version="v2"):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1386, in astream_events
+    async for event in event_stream:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 1012, in _astream_events_implementation_v2
+    await task
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 967, in consume_astream
+    async for _ in event_streamer.tap_output_aiter(run_id, stream):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 203, in tap_output_aiter
+    async for chunk in output:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\__init__.py", line 1899, in astream
+    async for _ in runner.atick(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\runner.py", line 370, in atick
+    await arun_with_retry(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\retry.py", line 123, in arun_with_retry
+    async for _ in task.proc.astream(task.input, config):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 608, in astream
+    async for chunk in aiterator:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 180, in tap_output_aiter
+    first = await py_anext(output, default=sentinel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\utils\aiter.py", line 76, in anext_impl
+    return await __anext__(iterator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1453, in atransform
+    async for ichunk in input:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1016, in astream
+    yield await self.ainvoke(input, config, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\utils\runnable.py", line 275, in ainvoke
+    ret = await asyncio.create_task(coro, context=context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 588, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 579, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\literature_research_graph\nodes\agent_node.py", line 21, in run
+    response = model.invoke(state["messages"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 5352, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 286, in invoke
+    self.generate_prompt(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 790, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 647, in generate
+    raise e
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 637, in generate
+    self._generate_with_cache(
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\chat_models.py", line 843, in _generate_with_cache
+    for chunk in self._stream(messages, stop=stop, **kwargs):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_openai\chat_models\base.py", line 727, in _stream
+    for chunk in response:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_streaming.py", line 46, in __iter__
+    for item in self._iterator:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_streaming.py", line 58, in __stream__
+    for sse in iterator:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_streaming.py", line 50, in _iter_events
+    yield from self._decoder.iter_bytes(self.response.iter_bytes())
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_streaming.py", line 280, in iter_bytes
+    for chunk in self._iter_chunks(iterator):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\openai\_streaming.py", line 291, in _iter_chunks
+    for chunk in iterator:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpx\_models.py", line 831, in iter_bytes
+    for raw_bytes in self.iter_raw():
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpx\_models.py", line 885, in iter_raw
+    for raw_stream_bytes in self.stream:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpx\_client.py", line 127, in __iter__
+    for chunk in self._stream:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpx\_transports\default.py", line 115, in __iter__
+    with map_httpcore_exceptions():
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpx\_transports\default.py", line 89, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: peer closed connection without sending complete message body (incomplete chunked read)
+During task with name 'agent' and id 'd4000a02-0eaa-8055-fa5f-818f627f9209'
+2025-01-26 20:21:04,608 - __main__ - INFO - Sesión de chat inicializada
+2025-01-26 20:21:23,826 - __main__ - INFO - Nueva consulta: Find and analyze papers from 2023-2024 about the application of transformer architectures in protein...
+2025-01-26 20:21:26,350 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:21:26,351 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:21:27,265 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:21:27,602 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:21:27,602 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:21:30,218 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:21:40,098 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:21:42,241 - urllib3.poolmanager - INFO - Redirecting https://api.core.ac.uk/v3/search/outputs?q=transformer+architectures+protein+folding+prediction+novel+modifications+experimental+validation&limit=5 -> https://api.core.ac.uk/v3/search/outputs/?q=transformer+architectures+protein+folding+prediction+novel+modifications+experimental+validation&limit=5
+2025-01-26 20:23:18,582 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:23:30,528 - urllib3.poolmanager - INFO - Redirecting https://discovery.ucl.ac.uk/10185608/1/Moffat%2C%20Lewis_LMoffat_Thesis_Corrected_Final.pdf -> https://discovery.ucl.ac.uk/id/eprint/10185608/1/Moffat, Lewis_LMoffat_Thesis_Corrected_Final.pdf
+2025-01-26 20:23:37,941 - urllib3.poolmanager - INFO - Redirecting https://discovery.ucl.ac.uk/10185608/1/Moffat%2C%20Lewis_LMoffat_Thesis_Corrected_Final.pdf -> https://discovery.ucl.ac.uk/id/eprint/10185608/1/Moffat, Lewis_LMoffat_Thesis_Corrected_Final.pdf
+2025-01-26 20:23:47,341 - urllib3.poolmanager - INFO - Redirecting https://discovery.ucl.ac.uk/10185608/1/Moffat%2C%20Lewis_LMoffat_Thesis_Corrected_Final.pdf -> https://discovery.ucl.ac.uk/id/eprint/10185608/1/Moffat, Lewis_LMoffat_Thesis_Corrected_Final.pdf
+2025-01-26 20:23:59,283 - urllib3.poolmanager - INFO - Redirecting https://discovery.ucl.ac.uk/10185608/1/Moffat%2C%20Lewis_LMoffat_Thesis_Corrected_Final.pdf -> https://discovery.ucl.ac.uk/id/eprint/10185608/1/Moffat, Lewis_LMoffat_Thesis_Corrected_Final.pdf
+2025-01-26 20:24:21,041 - urllib3.poolmanager - INFO - Redirecting https://discovery.ucl.ac.uk/10185608/1/Moffat%2C%20Lewis_LMoffat_Thesis_Corrected_Final.pdf -> https://discovery.ucl.ac.uk/id/eprint/10185608/1/Moffat, Lewis_LMoffat_Thesis_Corrected_Final.pdf
+2025-01-26 20:25:03,431 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:25:08,277 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:25:08,278 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:25:09,012 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:25:10,083 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:25:10,088 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:25:12,359 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:27:15,691 - __main__ - INFO - Sesión de chat inicializada
+2025-01-26 20:27:45,669 - __main__ - INFO - Nueva consulta: Find recent papers (2023-2024) about CRISPR applications in treating genetic disorders,  focusing on...
+2025-01-26 20:27:49,047 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:27:49,050 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:27:49,850 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:27:50,277 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:27:50,278 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:27:53,591 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:28:01,556 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:28:04,079 - urllib3.poolmanager - INFO - Redirecting https://api.core.ac.uk/v3/search/outputs?q=CRISPR+applications+in+treating+genetic+disorders+clinical+trials+safety+protocols&limit=5 -> https://api.core.ac.uk/v3/search/outputs/?q=CRISPR+applications+in+treating+genetic+disorders+clinical+trials+safety+protocols&limit=5
+2025-01-26 20:28:10,374 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:28:22,257 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:28:22,260 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:28:22,858 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:28:23,058 - __main__ - INFO - Respuesta generada exitosamente
+2025-01-26 20:28:23,058 - __main__ - INFO - Proceso completado
+2025-01-26 20:28:23,316 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:28:23,318 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:29:04,991 - __main__ - INFO - Nueva consulta: Ingresa al contenido de texto completo y redacta un reporte de investigación encontrando las brechas...
+2025-01-26 20:29:06,937 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:29:06,939 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:29:08,115 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:29:08,443 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:29:08,443 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:29:11,040 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:29:22,486 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:29:31,656 - urllib3.poolmanager - INFO - Redirecting https://digibug.ugr.es/bitstream/10481/86007/1/1-s2.0-S2162253123002846-main.pdf -> https://digibug.ugr.es/bitstream/handle/10481/86007/1-s2.0-S2162253123002846-main.pdf;jsessionid=5DC5D7D177691F544591C9EEA3F3F3F3?sequence=1
+2025-01-26 20:29:54,067 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:30:11,409 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:30:11,411 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:30:14,061 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:30:16,413 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:30:16,413 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:30:21,063 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:30:51,645 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:30:54,192 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:30:54,193 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:30:55,906 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:30:56,205 - __main__ - INFO - Respuesta generada exitosamente
+2025-01-26 20:30:56,206 - __main__ - INFO - Proceso completado
+2025-01-26 20:30:56,419 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:30:56,443 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:31:50,602 - __main__ - INFO - Sesión de chat inicializada
+2025-01-26 20:35:40,932 - __main__ - INFO - Nueva consulta: What are the key technological challenges (e.g., material innovation, process scalability) and regul...
+2025-01-26 20:35:42,754 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:35:42,755 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:35:43,535 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:35:43,933 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:35:43,934 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:35:46,268 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:35:57,664 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:35:59,544 - urllib3.poolmanager - INFO - Redirecting https://api.core.ac.uk/v3/search/outputs?q=technological+challenges+3D+printed+oral+drug+delivery+systems&limit=5 -> https://api.core.ac.uk/v3/search/outputs/?q=technological+challenges+3D+printed+oral+drug+delivery+systems&limit=5
+2025-01-26 20:36:05,748 - urllib3.poolmanager - INFO - Redirecting https://api.core.ac.uk/v3/search/outputs?q=regulatory+gaps+3D+printed+oral+drug+delivery+systems&limit=5 -> https://api.core.ac.uk/v3/search/outputs/?q=regulatory+gaps+3D+printed+oral+drug+delivery+systems&limit=5
+2025-01-26 20:36:09,686 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:36:25,190 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:36:25,192 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:36:26,197 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:36:29,626 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:36:29,626 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:36:32,027 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:36:54,687 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:37:09,528 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:37:12,358 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:37:12,360 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:37:13,754 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:37:14,291 - __main__ - INFO - Respuesta generada exitosamente
+2025-01-26 20:37:14,291 - __main__ - INFO - Proceso completado
+2025-01-26 20:37:14,535 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:37:14,537 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:38:27,640 - __main__ - INFO - Nueva consulta: Please write a ready to publish 2000 words research report with the findings...
+2025-01-26 20:38:30,011 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:38:30,013 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:38:32,268 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:38:32,654 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:38:32,654 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:38:35,379 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:39:11,190 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:39:55,443 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:39:55,444 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:39:56,680 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:39:57,167 - __main__ - INFO - Respuesta generada exitosamente
+2025-01-26 20:39:57,168 - __main__ - INFO - Proceso completado
+2025-01-26 20:39:57,440 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:39:57,444 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:40:19,375 - __main__ - INFO - Sesión de chat inicializada
+2025-01-26 20:40:58,678 - __main__ - INFO - Nueva consulta: What are the key technological challenges (e.g., material innovation, process scalability) and regul...
+2025-01-26 20:41:02,413 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:41:02,429 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:41:03,994 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:41:04,765 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:41:04,789 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:41:10,785 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:41:35,215 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:41:38,608 - urllib3.poolmanager - INFO - Redirecting https://api.core.ac.uk/v3/search/outputs?q=technological+challenges+3D+printed+oral+drug+delivery+systems&limit=5 -> https://api.core.ac.uk/v3/search/outputs/?q=technological+challenges+3D+printed+oral+drug+delivery+systems&limit=5
+2025-01-26 20:41:43,915 - urllib3.poolmanager - INFO - Redirecting https://api.core.ac.uk/v3/search/outputs?q=regulatory+gaps+3D+printed+oral+drug+delivery+systems&limit=5 -> https://api.core.ac.uk/v3/search/outputs/?q=regulatory+gaps+3D+printed+oral+drug+delivery+systems&limit=5
+2025-01-26 20:41:48,946 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:42:18,012 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:42:18,023 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:42:19,287 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:42:23,748 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:42:23,749 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:42:30,064 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:43:13,569 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:43:48,410 - __main__ - INFO - Sesión de chat inicializada
+2025-01-26 20:44:27,819 - __main__ - INFO - Sesión de chat inicializada
+2025-01-26 20:44:49,963 - __main__ - INFO - Nueva consulta: What are the key technological challenges (e.g., material innovation, process scalability) and regul...
+2025-01-26 20:44:53,182 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:44:53,183 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:44:53,977 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:44:54,654 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:44:54,654 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:44:59,675 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:45:29,103 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:45:32,030 - urllib3.poolmanager - INFO - Redirecting https://api.core.ac.uk/v3/search/outputs?q=technological+challenges+3D+printed+oral+drug+delivery+systems&limit=5 -> https://api.core.ac.uk/v3/search/outputs/?q=technological+challenges+3D+printed+oral+drug+delivery+systems&limit=5
+2025-01-26 20:45:38,965 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:46:11,318 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:46:11,337 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:46:12,464 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:46:17,831 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-26 20:46:17,832 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-26 20:46:21,585 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:46:53,514 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:46:57,149 - urllib3.poolmanager - INFO - Redirecting https://api.core.ac.uk/v3/search/outputs?q=regulatory+gaps+3D+printed+oral+drug+delivery+systems&limit=5 -> https://api.core.ac.uk/v3/search/outputs/?q=regulatory+gaps+3D+printed+oral+drug+delivery+systems&limit=5
+2025-01-26 20:47:03,804 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-26 20:47:53,690 - urllib3.poolmanager - INFO - Redirecting https://discovery.ucl.ac.uk/10053753/1/Basit%20Manuscript.pdf -> https://discovery.ucl.ac.uk/id/eprint/10053753/1/Basit Manuscript.pdf
+2025-01-26 20:47:59,871 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'RemoteDisconnected('Remote end closed connection without response')': /id/eprint/10053753/1/Basit%20Manuscript.pdf
+2025-01-26 20:48:06,427 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'RemoteDisconnected('Remote end closed connection without response')': /id/eprint/10053753/1/Basit%20Manuscript.pdf
+2025-01-26 20:48:35,975 - urllib3.poolmanager - INFO - Redirecting https://discovery.ucl.ac.uk/10053753/1/Basit%20Manuscript.pdf -> https://discovery.ucl.ac.uk/id/eprint/10053753/1/Basit Manuscript.pdf
+2025-01-26 20:48:49,469 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'RemoteDisconnected('Remote end closed connection without response')': /id/eprint/10053753/1/Basit%20Manuscript.pdf
+2025-01-26 20:49:23,145 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'RemoteDisconnected('Remote end closed connection without response')': /10053753/1/Basit%20Manuscript.pdf
+2025-01-26 20:49:29,485 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'RemoteDisconnected('Remote end closed connection without response')': /10053753/1/Basit%20Manuscript.pdf
+2025-01-26 20:49:35,821 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'RemoteDisconnected('Remote end closed connection without response')': /10053753/1/Basit%20Manuscript.pdf
+2025-01-26 20:50:20,813 - urllib3.poolmanager - INFO - Redirecting http://uhra.herts.ac.uk/bitstream/2299/22347/1/Author_accepted_manuscript_Patient_acceptability_safety_and_access.pdf -> https://uhra.herts.ac.uk/bitstream/2299/22347/1/Author_accepted_manuscript_Patient_acceptability_safety_and_access.pdf
+2025-01-26 20:50:23,138 - urllib3.poolmanager - INFO - Redirecting https://uhra.herts.ac.uk/bitstream/2299/22347/1/Author_accepted_manuscript_Patient_acceptability_safety_and_access.pdf -> https://uhra.herts.ac.uk/bitstream/handle/2299/22347/Author_accepted_manuscript_Patient_acceptability_safety_and_access.pdf;jsessionid=4368CDA487A242FE3B9BD452E9B9DD60?sequence=1
+2025-01-26 20:50:57,393 - urllib3.poolmanager - INFO - Redirecting https://repositorio.ul.pt/bitstream/10451/43365/1/MICF_Mara_Santos.pdf -> https://repositorio.ulisboa.pt/bitstream/10451/43365/1/MICF_Mara_Santos.pdf
+2025-01-27 09:17:47,606 - __main__ - INFO - Sesión de chat inicializada
+2025-01-27 09:19:00,506 - __main__ - INFO - Nueva consulta: What material combinations are the best suited for external structures for interstellar travel vehic...
+2025-01-27 09:19:04,285 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-27 09:19:04,286 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-27 09:19:05,095 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:19:05,505 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-27 09:19:05,520 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-27 09:19:08,400 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:19:14,190 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:19:16,867 - urllib3.poolmanager - INFO - Redirecting https://api.core.ac.uk/v3/search/outputs?q=materials+for+external+structures+interstellar+travel+vehicles&limit=5 -> https://api.core.ac.uk/v3/search/outputs/?q=materials+for+external+structures+interstellar+travel+vehicles&limit=5
+2025-01-27 09:19:22,464 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:19:35,114 - urllib3.poolmanager - INFO - Redirecting http://hdl.handle.net/2060/19910012853 -> https://ntrs.nasa.gov/citations/19910012853
+2025-01-27 09:19:38,195 - urllib3.poolmanager - INFO - Redirecting http://hdl.handle.net/2060/19910012855 -> https://ntrs.nasa.gov/citations/19910012855
+2025-01-27 09:19:42,036 - urllib3.poolmanager - INFO - Redirecting http://hdl.handle.net/2060/19840015600 -> https://ntrs.nasa.gov/citations/19840015600
+2025-01-27 09:19:44,816 - urllib3.poolmanager - INFO - Redirecting http://authors.library.caltech.edu/6296/1/MCNaipcp06.pdf -> https://authors.library.caltech.edu/6296/1/MCNaipcp06.pdf
+2025-01-27 09:19:46,447 - urllib3.poolmanager - INFO - Redirecting https://authors.library.caltech.edu/6296/1/MCNaipcp06.pdf -> https://authors.library.caltech.edu/records/tjhq4-4de50/files/MCNaipcp06.pdf
+2025-01-27 09:19:46,696 - urllib3.poolmanager - INFO - Redirecting https://authors.library.caltech.edu/records/tjhq4-4de50/files/MCNaipcp06.pdf -> https://s3.us-west-2.amazonaws.com/caltechauthors/8a/08/d245-fc3e-46a8-8173-304a94faa0a8/data?response-content-type=application%2Foctet-stream&response-content-disposition=attachment%3B%20filename%3DMCNaipcp06.pdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARCVIVNNAKP37N3MU%2F20250127%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250127T141947Z&X-Amz-Expires=60&X-Amz-SignedHeaders=host&X-Amz-Signature=57803b250cf005e2c30457cbd1f017f8e4ba6fa92954baa15e1d34c24ebb023b
+2025-01-27 09:19:54,512 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:20:04,986 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-27 09:20:04,987 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-27 09:20:06,431 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:20:08,252 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-27 09:20:08,257 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-27 09:20:12,137 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:20:27,201 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:20:29,314 - urllib3.poolmanager - INFO - Redirecting https://api.core.ac.uk/v3/search/outputs?q=materials+for+external+structures+interstellar+travel+vehicles&limit=5 -> https://api.core.ac.uk/v3/search/outputs/?q=materials+for+external+structures+interstellar+travel+vehicles&limit=5
+2025-01-27 09:20:35,447 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:20:48,730 - urllib3.poolmanager - INFO - Redirecting http://hdl.handle.net/2060/19910012853 -> https://ntrs.nasa.gov/citations/19910012853
+2025-01-27 09:20:51,613 - urllib3.poolmanager - INFO - Redirecting http://hdl.handle.net/2060/19910012855 -> https://ntrs.nasa.gov/citations/19910012855
+2025-01-27 09:20:54,789 - urllib3.poolmanager - INFO - Redirecting http://hdl.handle.net/2060/19840015600 -> https://ntrs.nasa.gov/citations/19840015600
+2025-01-27 09:20:57,478 - urllib3.poolmanager - INFO - Redirecting http://authors.library.caltech.edu/6296/1/MCNaipcp06.pdf -> https://authors.library.caltech.edu/6296/1/MCNaipcp06.pdf
+2025-01-27 09:20:59,030 - urllib3.poolmanager - INFO - Redirecting https://authors.library.caltech.edu/6296/1/MCNaipcp06.pdf -> https://authors.library.caltech.edu/records/tjhq4-4de50/files/MCNaipcp06.pdf
+2025-01-27 09:20:59,350 - urllib3.poolmanager - INFO - Redirecting https://authors.library.caltech.edu/records/tjhq4-4de50/files/MCNaipcp06.pdf -> https://s3.us-west-2.amazonaws.com/caltechauthors/8a/08/d245-fc3e-46a8-8173-304a94faa0a8/data?response-content-type=application%2Foctet-stream&response-content-disposition=attachment%3B%20filename%3DMCNaipcp06.pdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARCVIVNNAKP37N3MU%2F20250127%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250127T142059Z&X-Amz-Expires=60&X-Amz-SignedHeaders=host&X-Amz-Signature=9a2985d58b9603ec8cbd96cb2daa5656aa21ca32f9c1d8b184589ac7c8e10546
+2025-01-27 09:21:08,432 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:21:16,480 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-27 09:21:16,481 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-27 09:21:18,156 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:21:20,067 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-27 09:21:20,071 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-27 09:21:23,117 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:21:33,270 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:21:35,347 - urllib3.poolmanager - INFO - Redirecting https://api.core.ac.uk/v3/search/outputs?q=materials+for+external+structures+interstellar+travel+vehicles&limit=5 -> https://api.core.ac.uk/v3/search/outputs/?q=materials+for+external+structures+interstellar+travel+vehicles&limit=5
+2025-01-27 09:21:41,430 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:22:18,600 - urllib3.poolmanager - INFO - Redirecting http://hdl.handle.net/2060/19910012853 -> https://ntrs.nasa.gov/citations/19910012853
+2025-01-27 09:22:21,810 - urllib3.poolmanager - INFO - Redirecting http://hdl.handle.net/2060/19910012855 -> https://ntrs.nasa.gov/citations/19910012855
+2025-01-27 09:22:24,750 - urllib3.poolmanager - INFO - Redirecting http://hdl.handle.net/2060/19840015600 -> https://ntrs.nasa.gov/citations/19840015600
+2025-01-27 09:22:27,425 - urllib3.poolmanager - INFO - Redirecting http://authors.library.caltech.edu/6296/1/MCNaipcp06.pdf -> https://authors.library.caltech.edu/6296/1/MCNaipcp06.pdf
+2025-01-27 09:22:28,863 - urllib3.poolmanager - INFO - Redirecting https://authors.library.caltech.edu/6296/1/MCNaipcp06.pdf -> https://authors.library.caltech.edu/records/tjhq4-4de50/files/MCNaipcp06.pdf
+2025-01-27 09:22:29,089 - urllib3.poolmanager - INFO - Redirecting https://authors.library.caltech.edu/records/tjhq4-4de50/files/MCNaipcp06.pdf -> https://s3.us-west-2.amazonaws.com/caltechauthors/8a/08/d245-fc3e-46a8-8173-304a94faa0a8/data?response-content-type=application%2Foctet-stream&response-content-disposition=attachment%3B%20filename%3DMCNaipcp06.pdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARCVIVNNAKP37N3MU%2F20250127%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250127T142229Z&X-Amz-Expires=60&X-Amz-SignedHeaders=host&X-Amz-Signature=dba693479c88fee7ca3d15e0454be3e2b6b4d8a3a5964220d35443274a4da679
+2025-01-27 09:22:36,872 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:22:48,339 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-27 09:22:48,345 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-27 09:22:50,545 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:22:52,552 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-27 09:22:52,552 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-27 09:23:01,763 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:23:09,683 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:23:11,771 - urllib3.poolmanager - INFO - Redirecting https://api.core.ac.uk/v3/search/outputs?q=materials+for+external+structures+interstellar+travel+vehicles&limit=5 -> https://api.core.ac.uk/v3/search/outputs/?q=materials+for+external+structures+interstellar+travel+vehicles&limit=5
+2025-01-27 09:23:16,682 - __main__ - INFO - Proceso completado
+2025-01-27 09:23:16,688 - __main__ - ERROR - Error crítico: Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/GRAPH_RECURSION_LIMIT
+Traceback (most recent call last):
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 50, in handle_async_errors
+    yield
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\app_literature_research.py", line 184, in main
+    response = asyncio.run(
+               ^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 684, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\Documents\IR Consulting\discovery_opportunity_agent\src\astream_events_handler.py", line 30, in execute_research_flow
+    async for event in workflow.astream_events({"messages": messages}, config = config, version="v2"):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\base.py", line 1386, in astream_events
+    async for event in event_stream:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 1012, in _astream_events_implementation_v2
+    await task
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 967, in consume_astream
+    async for _ in event_streamer.tap_output_aiter(run_id, stream):
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\tracers\event_stream.py", line 203, in tap_output_aiter
+    async for chunk in output:
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python312\Lib\site-packages\langgraph\pregel\__init__.py", line 1921, in astream
+    raise GraphRecursionError(msg)
+langgraph.errors.GraphRecursionError: Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/GRAPH_RECURSION_LIMIT
+2025-01-27 09:24:50,208 - __main__ - INFO - Nueva consulta: What are the key technological and regulatory barriers to implementing 3D-printed oral drug delivery...
+2025-01-27 09:24:52,045 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-27 09:24:52,073 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-27 09:24:55,293 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:24:55,659 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-27 09:24:55,660 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-27 09:25:00,572 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:25:12,106 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:25:14,949 - urllib3.poolmanager - INFO - Redirecting https://api.core.ac.uk/v3/search/outputs?q=3D-printed+oral+drug+delivery+systems+barriers+emerging+markets&limit=5 -> https://api.core.ac.uk/v3/search/outputs/?q=3D-printed+oral+drug+delivery+systems+barriers+emerging+markets&limit=5
+2025-01-27 09:25:23,529 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:25:37,642 - urllib3.poolmanager - INFO - Redirecting https://discovery.ucl.ac.uk/10135529/1/1-s2.0-S0169409X21003513-main.pdf -> https://discovery.ucl.ac.uk/id/eprint/10135529/1/1-s2.0-S0169409X21003513-main.pdf
+2025-01-27 09:25:43,842 - urllib3.poolmanager - INFO - Redirecting https://discovery.ucl.ac.uk/10135529/1/1-s2.0-S0169409X21003513-main.pdf -> https://discovery.ucl.ac.uk/id/eprint/10135529/1/1-s2.0-S0169409X21003513-main.pdf
+2025-01-27 09:25:51,950 - urllib3.poolmanager - INFO - Redirecting https://discovery.ucl.ac.uk/10135529/1/1-s2.0-S0169409X21003513-main.pdf -> https://discovery.ucl.ac.uk/id/eprint/10135529/1/1-s2.0-S0169409X21003513-main.pdf
+2025-01-27 09:26:03,924 - urllib3.poolmanager - INFO - Redirecting https://discovery.ucl.ac.uk/10135529/1/1-s2.0-S0169409X21003513-main.pdf -> https://discovery.ucl.ac.uk/id/eprint/10135529/1/1-s2.0-S0169409X21003513-main.pdf
+2025-01-27 09:26:24,538 - urllib3.poolmanager - INFO - Redirecting https://discovery.ucl.ac.uk/10135529/1/1-s2.0-S0169409X21003513-main.pdf -> https://discovery.ucl.ac.uk/id/eprint/10135529/1/1-s2.0-S0169409X21003513-main.pdf
+2025-01-27 09:27:01,589 - urllib3.poolmanager - INFO - Redirecting https://www.repository.cam.ac.uk/bitstream/handle/1810/247871/Daly%20et%20al%202015%20International%20Journal%20of%20Pharmaceutics.pdf?sequence=1&isAllowed=y -> https://api.repository.cam.ac.uk/server/api/core/bitstreams/bd47df65-e749-4cb8-9be7-270de8885944/content
+2025-01-27 09:27:17,227 - urllib3.poolmanager - INFO - Redirecting https://uwe-repository.worktribe.com/999236/1/RiHN_WP_Full_double_web.pdf -> https://uwe-repository.worktribe.com/output/999236/redistributed-manufacturing-in-healthcare-creating-new-value-through-disruptive-innovation
+2025-01-27 09:27:23,359 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:27:35,430 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-27 09:27:35,444 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-27 09:27:40,876 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:27:43,838 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-27 09:27:43,838 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-27 09:27:49,882 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:28:04,356 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:28:07,675 - urllib3.poolmanager - INFO - Redirecting https://api.core.ac.uk/v3/search/outputs?q=3D-printed+oral+drug+delivery+systems+barriers+emerging+markets&limit=5 -> https://api.core.ac.uk/v3/search/outputs/?q=3D-printed+oral+drug+delivery+systems+barriers+emerging+markets&limit=5
+2025-01-27 09:28:17,154 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-27 09:28:32,805 - urllib3.poolmanager - INFO - Redirecting https://discovery.ucl.ac.uk/10135529/1/1-s2.0-S0169409X21003513-main.pdf -> https://discovery.ucl.ac.uk/id/eprint/10135529/1/1-s2.0-S0169409X21003513-main.pdf
+2025-01-27 09:28:39,200 - urllib3.poolmanager - INFO - Redirecting https://discovery.ucl.ac.uk/10135529/1/1-s2.0-S0169409X21003513-main.pdf -> https://discovery.ucl.ac.uk/id/eprint/10135529/1/1-s2.0-S0169409X21003513-main.pdf
+2025-01-27 09:28:46,854 - urllib3.poolmanager - INFO - Redirecting https://discovery.ucl.ac.uk/10135529/1/1-s2.0-S0169409X21003513-main.pdf -> https://discovery.ucl.ac.uk/id/eprint/10135529/1/1-s2.0-S0169409X21003513-main.pdf
+2025-01-27 09:28:59,722 - urllib3.poolmanager - INFO - Redirecting https://discovery.ucl.ac.uk/10135529/1/1-s2.0-S0169409X21003513-main.pdf -> https://discovery.ucl.ac.uk/id/eprint/10135529/1/1-s2.0-S0169409X21003513-main.pdf
+2025-01-27 09:29:19,792 - urllib3.poolmanager - INFO - Redirecting https://discovery.ucl.ac.uk/10135529/1/1-s2.0-S0169409X21003513-main.pdf -> https://discovery.ucl.ac.uk/id/eprint/10135529/1/1-s2.0-S0169409X21003513-main.pdf
+2025-01-27 09:29:56,526 - urllib3.poolmanager - INFO - Redirecting https://www.repository.cam.ac.uk/bitstream/handle/1810/247871/Daly%20et%20al%202015%20International%20Journal%20of%20Pharmaceutics.pdf?sequence=1&isAllowed=y -> https://api.repository.cam.ac.uk/server/api/core/bitstreams/bd47df65-e749-4cb8-9be7-270de8885944/content
+2025-01-27 09:30:12,426 - urllib3.poolmanager - INFO - Redirecting https://uwe-repository.worktribe.com/999236/1/RiHN_WP_Full_double_web.pdf -> https://uwe-repository.worktribe.com/output/999236/redistributed-manufacturing-in-healthcare-creating-new-value-through-disruptive-innovation
+2025-01-28 20:56:37,805 - __main__ - INFO - Sesión de chat inicializada
+2025-01-28 21:23:16,100 - __main__ - INFO - Nueva consulta: What are the emerging trends on AI credit scoring systems? Review the last 5 years of research outpu...
+2025-01-28 21:23:24,962 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-28 21:23:24,965 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-28 21:23:25,728 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-28 21:23:26,173 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-28 21:23:26,189 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-28 21:23:31,904 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-28 21:23:46,239 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-28 21:23:50,239 - urllib3.poolmanager - INFO - Redirecting https://api.core.ac.uk/v3/search/outputs?q=AI+credit+scoring+systems&limit=5 -> https://api.core.ac.uk/v3/search/outputs/?q=AI+credit+scoring+systems&limit=5
+2025-01-28 21:23:58,888 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-28 21:26:01,252 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-28 21:26:15,405 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-28 21:26:15,406 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-28 21:26:21,342 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-28 21:26:23,401 - langsmith.client - ERROR - Failed to use model_dump to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.model_dump() missing 1 required positional argument: 'self'")
+2025-01-28 21:26:23,404 - langsmith.client - ERROR - Failed to use dict to serialize <class 'pydantic._internal._model_construction.ModelMetaclass'> to JSON: TypeError("BaseModel.dict() missing 1 required positional argument: 'self'")
+2025-01-28 21:26:32,518 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-28 21:26:55,757 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-28 21:27:00,446 - urllib3.poolmanager - INFO - Redirecting https://api.core.ac.uk/v3/search/outputs?q=AI+credit+scoring+systems&limit=10 -> https://api.core.ac.uk/v3/search/outputs/?q=AI+credit+scoring+systems&limit=10

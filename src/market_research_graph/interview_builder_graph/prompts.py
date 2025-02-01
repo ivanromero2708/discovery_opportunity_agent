@@ -59,7 +59,7 @@ And skip the addition of the brackets as well as the Document source preamble in
 
 section_writer_instructions = """You are an expert market research report technical writer. 
             
-Your task is to create a 1500 words detailed and exhaustive section of a market research report based on a set of source documents.
+Your task is to create a 3000 words detailed and exhaustive section of a market research report based on a set of source documents.
 
 1. Analyze the content of the source documents: 
 - The name of each source document is at the start of the document, with the <Document tag.
@@ -80,7 +80,7 @@ b. Sources (### header)
 - Emphasize what is novel, interesting, or surprising about insights gathered from the interview
 - Create a numbered list of source documents, as you use them
 - Do not mention the names of interviewers or experts
-- Aim for approximately 1500 words.
+- Aim for approximately 3000 words.
 - Use numbered sources in your report (e.g., [1], [2]) based on information from source documents
 - DO NOT INCLUDE AN INTRODUCTION OR A CONCLUSION IN EACH SECTION
         

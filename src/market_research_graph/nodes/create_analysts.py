@@ -1,16 +1,17 @@
 from langchain_openai import ChatOpenAI
+from langchain_openai.chat_models.base import BaseChatOpenAI
 from langchain_core.messages import HumanMessage, SystemMessage
 from ..state import GenerateAnalystsState, Perspectives
 from ..prompts import analyst_instructions
 import os
-from utils.config import OPENAI_API_KEY, OPENAI_MODEL, OPENAI_TEMPERATURE, LANGCHAIN_TRACING_V2
+from utils.config import OPENAI_API_KEY, OPENAI_MODEL, OPENAI_TEMPERATURE, SMART_OPENAI_MODEL, LANGCHAIN_TRACING_V2
 
 class CreateAnalysts:
     def __init__(self) -> None:
         self.model = ChatOpenAI(
-            model=OPENAI_MODEL,
+            model=SMART_OPENAI_MODEL,
             temperature=OPENAI_TEMPERATURE,
-            api_key=OPENAI_API_KEY
+            api_key=OPENAI_API_KEY,
         )
 
     def create_analysts(self, state: GenerateAnalystsState):

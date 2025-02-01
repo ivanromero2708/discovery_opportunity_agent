@@ -1,0 +1,3 @@
+
+class DownloadDataCollection:
+    pass

@@ -14,6 +14,10 @@ LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY", "")  # Opcional para LangSmit
 OPENAI_MODEL = "gpt-4o-mini"
 OPENAI_TEMPERATURE = 0.0
 
+SMART_OPENAI_MODEL = "gpt-4o"
+DEEPSEEK_MODEL="deepseek-reasoner"
+DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
+
 # Configuración de búsqueda
 TAVILY_MAX_RESULTS = 3
 
