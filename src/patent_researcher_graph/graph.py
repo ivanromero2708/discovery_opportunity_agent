@@ -9,8 +9,6 @@ from .nodes import (
     SelectResearchSubFields,
     OutlineDeepDiveResearchSubFields,
     ConsolidateReport,
-    RenderReport, 
-    FinalizeReport,   
 )
 
 from .sub_field_research_graph.graph import (
@@ -28,8 +26,7 @@ select_research_sub_fields = SelectResearchSubFields()
 outline_deep_dive_research_sub_fields = OutlineDeepDiveResearchSubFields()
 iniatiate_all_sub_field_research = InitiateAllSubFieldResearch()
 consolidate_report = ConsolidateReport()
-finalize_report = FinalizeReport()
-render_report = RenderReport()
+
 
 # Add nodes and edges 
 patent_research_builder = StateGraph(PatentResearchGraphState)
@@ -40,8 +37,6 @@ patent_research_builder.add_node("select_research_sub_fields", select_research_s
 patent_research_builder.add_node("outline_deep_dive_research_sub_fields", outline_deep_dive_research_sub_fields.run)
 patent_research_builder.add_node("sub_field_research", sub_field_research_builder.compile())
 patent_research_builder.add_node("consolidate_report", consolidate_report.run)
-patent_research_builder.add_node("finalize_report", finalize_report.run)
-patent_research_builder.add_node("render_report", render_report.run)
 
 # Logic
 patent_research_builder.add_edge(START, "define_overall_research_domain")
@@ -51,9 +46,7 @@ patent_research_builder.add_edge("derive_sub_research_fields", "select_research_
 patent_research_builder.add_edge("select_research_sub_fields", "outline_deep_dive_research_sub_fields")
 patent_research_builder.add_conditional_edges("outline_deep_dive_research_sub_fields", iniatiate_all_sub_field_research.run, ["sub_field_research"])
 patent_research_builder.add_edge("sub_field_research", "consolidate_report")
-patent_research_builder.add_edge("consolidate_report", "finalize_report")
-patent_research_builder.add_edge("finalize_report", "render_report")
-patent_research_builder.add_edge("render_report", END)
+patent_research_builder.add_edge("consolidate_report", END)
 
 # Compile
 patent_research_memory = MemorySaver()

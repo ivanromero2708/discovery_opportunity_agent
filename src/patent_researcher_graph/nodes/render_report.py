@@ -1,3 +1,0 @@
-
-class RenderReport:
-    pass
