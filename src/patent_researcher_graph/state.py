@@ -3,6 +3,18 @@ from typing_extensions import Annotated
 import operator
 from langgraph.graph.message import add_messages
 from langchain_core.messages import AnyMessage
+from pydantic import BaseModel
+
+
+# Define a Pydantic model for a single domain relationship.
+class DomainRelationship(BaseModel):
+    domain: str
+    elements: List[str]
+    relationship: str
+
+# Define a wrapper model to represent the output as a JSON array.
+class DomainRelationshipsOutput(BaseModel):
+    domains: List[DomainRelationship]
 
 class PatentResearchGraphInputState(TypedDict):
     company_name: str                         # e.g., {"name": "EcoBattery Inc.", "background": "A leader in sustainable battery technologies with extensive R&D."}
@@ -31,7 +43,7 @@ class PatentResearchGraphState(TypedDict):
     research_statement: str                   # A concise narrative combining the above inputs.
     
     # --- Process 2 Output ---
-    main_domains: List[dict]                  # High-level domain map (each dict contains keys like "domain", "elements", "relationship").
+    main_domains: List[DomainRelationship]    # High-level domain map (each dict contains keys like "domain", "elements", "relationship").
     
     # --- Process 3 Output: Derived Research Sub-Fields ---
     total_sub_fields: List[str]
