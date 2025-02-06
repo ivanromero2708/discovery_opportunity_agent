@@ -18,7 +18,7 @@ consolidate_sub_research_fields = ConsolidateSubResearchFields()
 
 # Add nodes and edges 
 derive_sub_research_fields_builder = StateGraph(ResearchSubFieldsGraphState)
-derive_sub_research_fields_builder.add_node("subdivide_by_core_process_technology", subdivide_by_core_process_technology.run)
+derive_sub_research_fields_builder.add_node("subdivide_by_core_process_technology",subdivide_by_core_process_technology.run)
 derive_sub_research_fields_builder.add_node("subdivide_by_end_application", subdivide_by_end_application.run)
 derive_sub_research_fields_builder.add_node("subdivide_by_market_focus", subdivide_by_market_focus.run)
 derive_sub_research_fields_builder.add_node("subdivide_by_strategic_angle", subdivide_by_strategic_angle.run)

@@ -19,6 +19,7 @@ data_analysis_builder = StateGraph(DataAnalysisGraphState)
 data_analysis_builder.add_node("patent_activity_analysis", patent_activity_analysis.run)
 data_analysis_builder.add_node("key_players_analysis", key_players_analysis.run)
 data_analysis_builder.add_node("technology_clusters_analysis", technology_clusters_analysis.run)
+data_analysis_builder.add_node("consolidate_data_analysis", consolidate_data_analysis.run)
 
 # Logic
 data_analysis_builder.add_edge(START, "patent_activity_analysis")

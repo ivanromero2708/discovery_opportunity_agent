@@ -1,8 +1,7 @@
-
-
 class ConsolidateDataAnalysis:
-    def __init__(self, data_analysis):
-        self.data_analysis = data_analysis
+    def __init__(self):
+        pass
 
-    def consolidate(self):
-        return self.data_analysis
+    def run(self, state, config=None):
+        # Simply return a dummy consolidation of the analysis outputs.
+        return {"consolidated_analysis": {"dummy": "consolidated_result"}}

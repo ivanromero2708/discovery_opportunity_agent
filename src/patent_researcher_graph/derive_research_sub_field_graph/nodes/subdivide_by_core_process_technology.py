@@ -2,7 +2,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
 from langchain_core.runnables import RunnableConfig
 from pydantic import BaseModel
-from ..configuration import Configuration
+from ...configuration import Configuration
 from ..state import ResearchSubFieldsGraphState, CoreProcessSubFieldsOutput
 from ...state import DomainRelationship
 from ..prompts import PROMPT_SUBDIVIDE_BY_CORE_TECHNOLOGIES
