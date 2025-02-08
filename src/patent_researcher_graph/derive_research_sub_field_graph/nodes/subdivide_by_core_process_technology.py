@@ -2,46 +2,50 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
 from langchain_core.runnables import RunnableConfig
 from pydantic import BaseModel
-from ...configuration import Configuration
-from ..state import ResearchSubFieldsGraphState, CoreProcessSubFieldsOutput
-from ...state import DomainRelationship
-from ..prompts import PROMPT_SUBDIVIDE_BY_CORE_TECHNOLOGIES
+from src.patent_researcher_graph.configuration import Configuration
+from src.patent_researcher_graph.derive_research_sub_field_graph.state import ResearchSubFieldsGraphState, CoreProcessSubFieldsOutput
+from src.patent_researcher_graph.state import DomainRelationship
+from src.patent_researcher_graph.derive_research_sub_field_graph.prompts import PROMPT_SUBDIVIDE_BY_CORE_TECHNOLOGIES
 from typing import List
 
 class SubdivideByCoreProcessTechnology:
-    def format_main_domains(self, main_domains: List[DomainRelationship]) -> str:
+    def format_main_domains(self, main_domains: List) -> str:
         """
-        Transforms a list of DomainRelationship Pydantic objects into an organized string.
-        
-        The output is formatted with headings and bullet points for clarity.
-        
-        Example output:
-        
+        Transforma una lista de dominios en un string formateado.
+        Si un elemento es una instancia de DomainRelationship se utilizan sus atributos;
+        si es un string, se usa directamente.
+
+        Ejemplo de salida:
+
         High-Level Domain Research Map:
-        
-        Domain: Core Process
-        - Doping Techniques
-        - Manufacturing Methods
-        Relationship: Innovation in doping directly affects electrode performance.
-        
-        Domain: End Application
-        - EV Batteries
-        - Consumer Electronics
-        Relationship: Application requirements drive process innovation.
-        
+
+        Domain: Core Process: Doping Techniques
+          Elements:
+            - Element1
+            - Element2
+          Relationship: Affects performance.
+
+        Domain: End Application: EV Batteries
+
         Returns:
-            A string representing the formatted domain research map.
+            Un string representando el mapa de dominios.
         """
         if not main_domains:
             return "No domain relationships provided."
         
         lines = ["High-Level Domain Research Map:\n"]
-        for domain_obj in main_domains:
-            lines.append(f"Domain: {domain_obj.domain}")
-            lines.append("  Elements:")
-            for element in domain_obj.elements:
-                lines.append(f"    - {element}")
-            lines.append(f"Relationship: {domain_obj.relationship}\n")
+        for item in main_domains:
+            if isinstance(item, DomainRelationship):
+                lines.append(f"Domain: {item.domain}")
+                lines.append("  Elements:")
+                for element in item.elements:
+                    lines.append(f"    - {element}")
+                lines.append(f"Relationship: {item.relationship}\n")
+            elif isinstance(item, str):
+                lines.append(f"Domain: {item}\n")
+            else:
+                # En caso de otro tipo, lo convertimos a string.
+                lines.append(f"Domain: {str(item)}\n")
         return "\n".join(lines)
     
     def run(self, state: ResearchSubFieldsGraphState, config: RunnableConfig) -> dict:
@@ -91,3 +95,36 @@ class SubdivideByCoreProcessTechnology:
         
         # Return the result using the key expected by the parent state.
         return {"sub_fields_by_core": result.sub_fields}
+
+
+def main():
+    # Crear un estado dummy de prueba, usando una mezcla de objetos DomainRelationship y strings simples.
+    dummy_state: ResearchSubFieldsGraphState = {
+        "research_statement": "Dummy research statement for testing.",
+        "main_domains": [
+            # Un objeto DomainRelationship válido
+            DomainRelationship(
+                domain="Core Process: Doping Techniques",
+                elements=["Technique1", "Technique2"],
+                relationship="Enhances performance in battery manufacturing."
+            ),
+            # Una cadena simple para comprobar el manejo de fallbacks
+            "End Application: EV Batteries"
+        ],
+        "strategic_objectives": "Focus on improving efficiency and reducing costs.",
+        "technology": "Advanced doping methods combined with innovative manufacturing techniques.",
+        "total_sub_fields": []
+    }
+    
+    # Crear una configuración dummy
+    dummy_config = RunnableConfig(configurable=Configuration())
+    
+    # Instanciar y ejecutar el nodo
+    node = SubdivideByCoreProcessTechnology()
+    output = node.run(dummy_state, dummy_config)
+    
+    print("Sub-fields based on core process/technology:")
+    print(output)
+
+if __name__ == "__main__":
+    main()

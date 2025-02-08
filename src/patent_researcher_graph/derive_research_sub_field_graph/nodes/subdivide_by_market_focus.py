@@ -3,49 +3,53 @@ from langchain_openai import ChatOpenAI
 from langchain_core.runnables import RunnableConfig
 from pydantic import BaseModel
 from typing import List
-from ...configuration import Configuration
-from ..state import ResearchSubFieldsGraphState
-from ...state import DomainRelationship
-from ..prompts import PROMPT_SUBDIVIDE_BY_MARKET_FOCUS
+from src.patent_researcher_graph.configuration import Configuration
+from src.patent_researcher_graph.derive_research_sub_field_graph.state import ResearchSubFieldsGraphState
+from src.patent_researcher_graph.state import DomainRelationship
+from src.patent_researcher_graph.derive_research_sub_field_graph.prompts import PROMPT_SUBDIVIDE_BY_MARKET_FOCUS
 
 # Define a simple Pydantic model for the expected output.
 class MarketFocusSubFieldsOutput(BaseModel):
     sub_fields: List[str]
 
 class SubdivideByMarketFocus:
-    def format_main_domains(self, main_domains: List[DomainRelationship]) -> str:
+    def format_main_domains(self, main_domains: List) -> str:
         """
-        Transforms a list of DomainRelationship Pydantic objects into an organized string.
-        
-        The output is formatted with headings and bullet points for clarity.
-        
-        Example output:
-        
+        Transforma una lista de dominios en un string formateado.
+        Si un elemento es una instancia de DomainRelationship se utilizan sus atributos;
+        si es un string, se usa directamente.
+
+        Ejemplo de salida:
+
         High-Level Domain Research Map:
-        
-        Domain: Core Process
-        - Doping Techniques
-        - Manufacturing Methods
-        Relationship: Innovation in doping directly affects electrode performance.
-        
-        Domain: End Application
-        - EV Batteries
-        - Consumer Electronics
-        Relationship: Application requirements drive process innovation.
-        
+
+        Domain: Core Process: Doping Techniques
+          Elements:
+            - Element1
+            - Element2
+          Relationship: Affects performance.
+
+        Domain: End Application: EV Batteries
+
         Returns:
-            A string representing the formatted domain research map.
+            Un string representando el mapa de dominios.
         """
         if not main_domains:
             return "No domain relationships provided."
         
         lines = ["High-Level Domain Research Map:\n"]
-        for domain_obj in main_domains:
-            lines.append(f"Domain: {domain_obj.domain}")
-            lines.append("  Elements:")
-            for element in domain_obj.elements:
-                lines.append(f"    - {element}")
-            lines.append(f"Relationship: {domain_obj.relationship}\n")
+        for item in main_domains:
+            if isinstance(item, DomainRelationship):
+                lines.append(f"Domain: {item.domain}")
+                lines.append("  Elements:")
+                for element in item.elements:
+                    lines.append(f"    - {element}")
+                lines.append(f"Relationship: {item.relationship}\n")
+            elif isinstance(item, str):
+                lines.append(f"Domain: {item}\n")
+            else:
+                # En caso de otro tipo, lo convertimos a string.
+                lines.append(f"Domain: {str(item)}\n")
         return "\n".join(lines)
     
     def run(self, state: ResearchSubFieldsGraphState, config: RunnableConfig) -> dict:
@@ -96,25 +100,25 @@ class SubdivideByMarketFocus:
         # Return the result with the key expected by the parent state.
         return {"sub_fields_by_region": result.sub_fields}
 
-# For quick local testing:
+# Ejemplo de prueba con estado dummy
 if __name__ == "__main__":
-    # Create a dummy state.
-    dummy_state = ResearchSubFieldsGraphState(
-        research_statement="Dummy research statement",
-        main_domains=["Domain: End Application - EV Batteries, Consumer Electronics. Relationship: Application requirements drive process innovation."],
-        strategic_objectives="Focus on market trends in developed regions.",
-        sub_fields_by_core=[],
-        sub_fields_by_application=[],
-        sub_fields_by_region=[],
-        sub_fields_by_strategic=[],
-        total_sub_fields=[]
-    )
-    # Create a dummy RunnableConfig (using your Configuration class).
+    # Creamos un estado dummy; se incluye un objeto DomainRelationship y un string.
+    dummy_state: ResearchSubFieldsGraphState = {
+        "research_statement": "Dummy research statement",
+        "main_domains": [
+            DomainRelationship(domain="Core Process: Doping Techniques", elements=["Element1", "Element2"], relationship="Affects performance"),
+            "End Application: EV Batteries"
+        ],
+        "strategic_objectives": "Expand market share in Asia and Europe",
+        "total_sub_fields": [],
+        "region": "Asia"
+    }
+    
     from langchain_core.runnables import RunnableConfig
-    from ...configuration import Configuration
+    from src.patent_researcher_graph.configuration import Configuration
     dummy_config = RunnableConfig(configurable=Configuration())
     
     node = SubdivideByMarketFocus()
     output = node.run(dummy_state, dummy_config)
-    print("Sub-fields based on market/regional focus:")
+    print("Sub-fields based on market & regional focus:")
     print(output)

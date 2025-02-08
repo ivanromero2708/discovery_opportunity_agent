@@ -1,3 +1,4 @@
 from .initiate_all_sub_field_research import InitiateAllSubFieldResearch
+from .initiate_outline_deep_dive_patent_research import InitiateOutlineDeepDivePatentResearch
 
-__all__ = ["InitiateAllSubFieldResearch"]
+__all__ = ["InitiateAllSubFieldResearch", "InitiateOutlineDeepDivePatentResearch"]

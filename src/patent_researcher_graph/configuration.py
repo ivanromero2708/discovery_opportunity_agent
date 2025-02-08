@@ -13,7 +13,8 @@ load_dotenv()  # Cargar variables de entorno desde .env
 @dataclass(kw_only=True)
 class Configuration:
     """The configurable fields for the chatbot."""
-    number_of_queries: int = 2 
+    number_of_queries: int = 2
+    number_of_sub_fields: int = 3 
     tavily_topic: str = "general"
     tavily_days: str = None
     planner_model: str = "gpt-4o-mini"

@@ -2,7 +2,7 @@ from langchain_core.runnables import RunnableConfig
 from ..state import PatentResearchGraphState
 from langgraph.constants import Send
 
-class InitiateAllSubFieldResearch:
+class InitiateOutlineDeepDivePatentResearch:
     def __init__(self):
         self.configurable = None
     
@@ -15,7 +15,7 @@ class InitiateAllSubFieldResearch:
         technology = state["technology"]
         strategic_objectives = state["strategic_objectives"]
         return [
-            Send("sub_field_research", 
+            Send("outline_deep_dive_research_sub_fields", 
                 {
                     "company_name": company_name,
                     "industry": industry,
@@ -23,8 +23,8 @@ class InitiateAllSubFieldResearch:
                     "region": region,
                     "technology": technology,
                     "strategic_objectives": strategic_objectives,
-                    "research_plan": research_plan
+                    "prioritized_sub_field": prioritized_sub_field
                 }
             ) 
-            for research_plan in state["research_plans"]
+            for prioritized_sub_field in state["prioritized_sub_fields"]
         ]

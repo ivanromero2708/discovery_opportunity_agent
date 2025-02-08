@@ -21,7 +21,10 @@ class ResearchSubFieldsGraphState(TypedDict):
     # Inherited from the main graph.
     research_statement: str                   # A concise narrative combining the above inputs.
     main_domains: List[DomainRelationship]    # High-level domain map.
+    technology: str
     strategic_objectives: str                 # Strategic objectives.
+    products_services: str
+    region: str
     
     # Intermediate outputs (segmentation by various dimensions):
     sub_fields_by_core: List[str]         # E.g., ["Smelting & Upgrading", "Innovative Hydrometallurgical Processes"]

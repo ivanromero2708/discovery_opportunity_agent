@@ -2,6 +2,7 @@ from typing import List, Optional, Dict, TypedDict
 from typing_extensions import Annotated
 from operator import add
 import operator
+from ..state import OutlineDeepDivePatentResearch
 
 # ============ Analyst profiles ============ #
 class Analyst(TypedDict):
@@ -22,8 +23,7 @@ class SubFieldResearchIOutputState(TypedDict):
 # ============ Graph State ============ #
 class SubFieldResearchGraphState(TypedDict):
     # === Input: Identification of the sub-field === #
-    prioritized_sub_fields: List[str]               # Ranked list of sub-field names.
-    research_plans: List[Dict]                      # Mapping: sub-field name → research plan (JSON-like dict).
+    research_plan: OutlineDeepDivePatentResearch                     # Mapping: sub-field name → research plan (JSON-like dict).
     
     # === 6.1 Create search equation output === #
     search_equation: str
