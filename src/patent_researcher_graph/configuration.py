@@ -14,7 +14,12 @@ load_dotenv()  # Cargar variables de entorno desde .env
 class Configuration:
     """The configurable fields for the chatbot."""
     number_of_queries: int = 2
-    number_of_sub_fields: int = 3 
+    number_of_sub_fields: int = 3
+    number_of_core_terms: int = 3
+    number_of_related_terms: int = 3
+    number_of_exclusion_terms: int = 2 
+    minimum_consistency_score: float = 0.8
+    base_consistency_score: int = 10
     tavily_topic: str = "general"
     tavily_days: str = None
     planner_model: str = "gpt-4o-mini"
